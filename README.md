@@ -25,3 +25,42 @@ A personal “enterprise-style” iOS app to showcase real-world engineering ski
 - **Architecture:** Clean Architecture + MVVM (and Coordinator/Router where needed)
 
 ## Repository Structure
+
+myskills-ios/
+├── MySkills.xcworkspace/
+├── Apps/
+│   ├── MySkillsUIKitApp/        # UIKit executable
+│   └── MySkillsSwiftUIApp/      # SwiftUI executable
+├── Packages/
+│   ├── CoreKit/                 # networking, logging, shared utilities
+│   ├── DesignSystem/            # tokens + UIKit/SwiftUI components
+│   └── Features/                # feature modules (Home, Profile, etc.)
+└── Docs/
+├── architecture.md
+└── adr/             
+
+
+## ROAD MAP
+v0.1 — Ship the simplest working app (Resume Landing)
+	•	Workspace + two app shells
+	•	MySkillsUIKitApp (UIKit)
+	•	MySkillsSwiftUIApp (SwiftUI)
+	•	Composition Root (minimal, scalable)
+	•	App entry + environment wiring (dependency container)
+	•	Feature registration / assembly pattern (so adding features stays clean)
+	•	Routing contract (UIKit Coordinator / SwiftUI Router) — minimal
+	•	PlatformKit (reusable for any app)
+	•	Logging (simple protocol + default console implementation)
+	•	Analytics (protocol + “Noop” implementation by default)
+	•	Networking (HTTPClient protocol + URLSession implementation)
+	•	MyResumeFeature
+	•	Static resume model (local JSON or hardcoded model to start)
+	•	Landing screen UI in UIKit
+	•	Landing screen UI in SwiftUI
+	•	Basic tests for:
+	•	Resume model mapping
+	•	ViewModel state (if you use MVVM)
+	•	CI baseline
+	•	Build + test on PR (GitHub Actions)
+	•	Protect main (PR required + checks required)
+
