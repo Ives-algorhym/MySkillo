@@ -27,7 +27,7 @@ Package.resolved
 # CocoaPods
 Pods/
 *.xcworkspace
-!MySkills.xcworkspace/
+!MySkilo.xcworkspace/
 
 # Carthage
 Carthage/Build/
