@@ -44,6 +44,7 @@
 		452689CB2F5A1E6700F19EA6 /* MySkilloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkilloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452689D72F5A1E6800F19EA6 /* MySkilloSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkilloSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		452689E12F5A1E6900F19EA6 /* MySkilloSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkilloSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45268A1A2F5A3EA300F19EA6 /* AppCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AppCore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -141,6 +142,7 @@
 		4526898A2F5A1C0400F19EA6 = {
 			isa = PBXGroup;
 			children = (
+				45268A1A2F5A3EA300F19EA6 /* AppCore */,
 				452689952F5A1C0400F19EA6 /* MySkillo */,
 				452689AC2F5A1C0600F19EA6 /* MySkilloTests */,
 				452689B62F5A1C0600F19EA6 /* MySkilloUITests */,
