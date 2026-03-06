@@ -1,22 +1,86 @@
-# This workflow will build a Swift project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
-
-name: Swift
+name: MySkillo CI  # Workflow name shown in GitHub Actions
 
 on:
-  push:
+  pull_request:      # Run on PRs targeting main
     branches: [ "main" ]
-  pull_request:
+  push:              # Run on direct pushes to main
     branches: [ "main" ]
+
+concurrency:
+  group: ci-${{ github.ref }}   # One run per branch/ref
+  cancel-in-progress: true      # Cancel older runs when new ones start
 
 jobs:
-  build:
+  build-and-test:
+    name: Build and Test         # Job name in Actions UI
+    runs-on: macos-14            # Use macOS runner (needed for Xcode)
 
-    runs-on: macos-latest
+    strategy:
+      fail-fast: false           # Don't stop other matrix jobs if one fails
+      matrix:
+        scheme:                  # Run job for each scheme
+          - MySkillo
+          - MySkilloSwiftUI
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+      - name: Checkout repository
+        uses: actions/checkout@v4   # Pull repo code into runner
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app   # Choose default Xcode
+
+      - name: Show Xcode version
+        run: xcodebuild -version     # Print Xcode version for logs
+
+      - name: Cache Swift Package Manager
+        uses: actions/cache@v4       # Cache dependencies for faster builds
+        with:
+          path: |
+            ~/.swiftpm
+            ~/Library/Caches/org.swift.swiftpm
+            ~/Library/Developer/Xcode/DerivedData
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }} # Cache key
+          restore-keys: |
+            ${{ runner.os }}-spm-
+
+      - name: Resolve package dependencies
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -workspace MySkillo.xcworkspace \
+            -scheme "${{ matrix.scheme }}"  # Resolve SPM for each scheme
+
+      - name: Build and test ${{ matrix.scheme }}
+        run: |
+          xcodebuild test \
+            -workspace MySkillo.xcworkspace \
+            -scheme "${{ matrix.scheme }}" \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            CODE_SIGNING_ALLOWED=NO        # Disable signing on CI
+
+  swiftformat:
+    name: SwiftFormat              # Job name
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Pull repo code
+
+      - name: Install SwiftFormat
+        run: brew install swiftformat  # Install formatter
+
+      - name: Run SwiftFormat check
+        run: swiftformat . --lint      # Lint only, no changes
+
+  swiftlint:
+    name: SwiftLint                # Job name
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Pull repo code
+
+      - name: Install SwiftLint
+        run: brew install swiftlint  # Install linter
+
+      - name: Run SwiftLint
+        run: swiftlint               # Run lint rules
