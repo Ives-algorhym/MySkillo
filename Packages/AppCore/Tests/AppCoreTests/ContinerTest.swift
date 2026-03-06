@@ -103,4 +103,5 @@ final class ServiceB {
         self.service = service
     }
 }
+
 // swiftlint:enable force_try force_cast
