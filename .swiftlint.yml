@@ -1,0 +1,7 @@
+force_try:
+    excluded:
+        - "**/*Tests/**/*.swift"
+
+force_cast:
+    excluded:
+        - "**/*Tests/**/*.swift"
