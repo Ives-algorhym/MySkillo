@@ -1,26 +1,23 @@
 //
-//  File.swift
+//  CompositionRootTests.swift
 //  AppCore
 //
 //  Created by Ives Murillo on 3/6/26.
 //
 
+@testable import AppCore
 import Testing
 import UIKit
-@testable import AppCore
 
-@Suite("Composition root tests")
 struct CompositionRootTests {
     @MainActor
     @Test("make UIKitRoot returns a ViewController")
-    func makeUIKitRootReturnsViewController() async throws {
-
+    func makeUIKitRootReturnsViewController() {
         let sut = CompositionRoot(environment: .development, registry: FeatureRegistry(
             registrants: []
         ))
 
         _ = sut.makeUIKitRoot()
-
     }
 
     @Test("Composition root register features into the container")
@@ -48,7 +45,7 @@ struct CompositionRootTests {
     }
 
     @Test("Composition root cache container")
-    func compositionRootCachecontainer() throws {
+    func compositionRootCachecontainer() {
         let sut = CompositionRoot(
             environment: .development,
             registry: FeatureRegistry(registrants: [])
@@ -61,7 +58,7 @@ struct CompositionRootTests {
     }
 
     @Test("Composition root cache container")
-    func compositionRootRcontainer() throws {
+    func compositionRootRcontainer() {
         let sut = CompositionRoot(
             environment: .development,
             registry: FeatureRegistry(registrants: [])

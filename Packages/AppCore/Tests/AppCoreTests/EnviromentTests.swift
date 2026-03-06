@@ -1,18 +1,16 @@
 //
-//  File.swift
+//  EnviromentTests.swift
 //  AppCore
 //
 //  Created by Ives Murillo on 3/5/26.
 //
 
-import Testing
 @testable import AppCore
+import Testing
 
-@Suite("App Enviroment")
 struct EnvirommentTests {
     @Test("enviroment exposes configuration variants")
-    func enviromentExposesVariants() async throws {
-
+    func enviromentExposesVariants() {
         let prod = Environment.production
         let dev = Environment.development
 
@@ -20,5 +18,3 @@ struct EnvirommentTests {
         #expect(dev.name == "development")
     }
 }
-
-

@@ -1,14 +1,13 @@
 //
-//  File.swift
+//  ContinerTest.swift
 //  AppCore
 //
 //  Created by Ives Murillo on 3/5/26.
 //
 
-import Testing
 @testable import AppCore
+import Testing
 
-@Suite("Appcontainer")
 struct AppcontainerTests {
     @Test("register + resolve returns instance")
     func registerAndResolve() throws {
@@ -51,7 +50,6 @@ struct AppcontainerTests {
     }
 }
 
-@Suite("DependencyRegistering")
 struct DependencyRegisteringTests {
     @Test("registrant can register dependencies")
     func registrantCanRegisterDependencies() throws {
@@ -63,7 +61,6 @@ struct DependencyRegisteringTests {
     }
 }
 
-@Suite("FeatureRegistry")
 struct FeatureRegistryTests {
     @Test("register all calls each registrant")
     func registerAllCallsEachRegistrant() throws {
@@ -94,10 +91,14 @@ enum FeatureB: DependnencyRegistering {
 
 final class ServiceA {
     let id: Int
-    init(id: Int) { self.id = id }
+    init(id: Int) {
+        self.id = id
+    }
 }
 
 final class ServiceB {
     let service: ServiceA
-    init(service: ServiceA) { self.service = service }
+    init(service: ServiceA) {
+        self.service = service
+    }
 }

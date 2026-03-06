@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  DependnencyRegistering.swift
 //  AppCore
 //
 //  Created by Ives Murillo on 3/5/26.

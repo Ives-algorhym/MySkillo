@@ -5,13 +5,11 @@
 //  Created by Ives Murillo on 3/5/26.
 //
 
-import Testing
 @testable import MySkilloSwiftUI
+import Testing
 
 struct MySkilloSwiftUITests {
-
-    @Test func example() async throws {
+    @Test func example() {
         // Write your test here and use APIs like `#expect(...)` to check expected conditions.
     }
-
 }

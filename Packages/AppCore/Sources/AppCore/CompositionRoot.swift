@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CompositionRoot.swift
 //  AppCore
 //
 //  Created by Ives Murillo on 3/6/26.
