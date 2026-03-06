@@ -7,15 +7,15 @@
 
 import Foundation
 
-public final class Continer {
+public final class Container {
 
-    private var factories: [ObjectIdentifier: (Continer) -> Any] = [:]
+    private var factories: [ObjectIdentifier: (Container) -> Any] = [:]
 
     public init() {}
 
-    func register<T>(_ type: T.Type, factory: @escaping(Continer) -> T) {
-        factories[ObjectIdentifier(type)] = { continer in
-            factory(continer)
+    func register<T>(_ type: T.Type, factory: @escaping(Container) -> T) {
+        factories[ObjectIdentifier(type)] = { container in
+            factory(container)
         }
     }
 

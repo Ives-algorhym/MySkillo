@@ -30,7 +30,7 @@ struct CompositionRootTests {
             registry: FeatureRegistry(registrants: [FeatureA.self])
         )
 
-        let container = sut.continer
+        let container = sut.container
 
         _ = try container.resolve(ServiceA.self)
     }
@@ -42,33 +42,33 @@ struct CompositionRootTests {
             registry: FeatureRegistry(registrants: [])
         )
 
-        let container = sut.continer
+        let container = sut.container
 
         _ = try container.resolve(Environment.self)
     }
 
     @Test("Composition root cache container")
-    func compositionRootCacheContiner() throws {
+    func compositionRootCachecontainer() throws {
         let sut = CompositionRoot(
             environment: .development,
             registry: FeatureRegistry(registrants: [])
         )
 
-        let containerA = sut.continer
-        let containerB = sut.continer
+        let containerA = sut.container
+        let containerB = sut.container
 
         #expect(containerA === containerB)
     }
 
     @Test("Composition root cache container")
-    func compositionRootRContiner() throws {
+    func compositionRootRcontainer() throws {
         let sut = CompositionRoot(
             environment: .development,
             registry: FeatureRegistry(registrants: [])
         )
 
-        let containerA = sut.continer
-        let containerB = sut.continer
+        let containerA = sut.container
+        let containerB = sut.container
 
         #expect(containerA === containerB)
     }

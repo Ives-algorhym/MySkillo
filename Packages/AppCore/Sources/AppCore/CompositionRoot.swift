@@ -12,15 +12,15 @@ public class CompositionRoot {
     private let environment: Environment
     private let registry: FeatureRegistry
 
-    private(set) lazy var continer: Continer = {
-        let continer = Continer()
+    private(set) lazy var container: Container = {
+        let container = Container()
 
-        continer.register(Environment.self) { _ in
+        container.register(Environment.self) { _ in
             self.environment
         }
 
-        registry.registerAll(in: continer)
-        return continer
+        registry.registerAll(in: container)
+        return container
     }()
 
     init(environment: Environment, registry: FeatureRegistry) {

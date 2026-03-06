@@ -14,9 +14,9 @@ public struct FeatureRegistry {
         self.registrants = registrants
     }
 
-    public func registerAll(in continer: Continer) {
+    public func registerAll(in container: Container) {
         registrants.forEach {
-            $0.register(in: continer)
+            $0.register(in: container)
         }
     }
 }

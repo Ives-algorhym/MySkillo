@@ -6,5 +6,5 @@
 //
 
 public protocol DependnencyRegistering {
-    static func register(in: Continer)
+    static func register(in: Container)
 }
