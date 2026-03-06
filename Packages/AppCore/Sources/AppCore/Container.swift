@@ -23,10 +23,15 @@ public final class Container {
             throw ResolutionError.missingRegistration
         }
 
-        return factory(self) as! T
+        guard let resolved = factory(self) as? T else {
+            throw ResolutionError.typeMissmatch
+        }
+
+        return resolved
     }
 }
 
 enum ResolutionError: Error {
     case missingRegistration
+    case typeMissmatch
 }
