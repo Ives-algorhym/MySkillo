@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "E2DB3F84-9689-4240-82B6-5232D4A0672D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "AppCoreTests",
+        "name" : "AppCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}
