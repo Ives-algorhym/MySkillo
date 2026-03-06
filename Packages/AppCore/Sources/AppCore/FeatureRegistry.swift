@@ -6,9 +6,9 @@
 //
 
 public struct FeatureRegistry {
-    private let registrants: [DependnencyRegistering.Type]
+    private let registrants: [DependencyRegistering.Type]
 
-    public init(registrants: [DependnencyRegistering.Type]) {
+    public init(registrants: [DependencyRegistering.Type]) {
         self.registrants = registrants
     }
 

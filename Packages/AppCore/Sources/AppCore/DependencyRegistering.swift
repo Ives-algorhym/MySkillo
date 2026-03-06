@@ -5,6 +5,6 @@
 //  Created by Ives Murillo on 3/5/26.
 //
 
-public protocol DependnencyRegistering {
+public protocol DependencyRegistering {
     static func register(in: Container)
 }

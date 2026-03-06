@@ -1,3 +1,4 @@
+// swiftlint:disable force_try force_cast
 //
 //  ContinerTest.swift
 //  AppCore
@@ -74,13 +75,13 @@ struct FeatureRegistryTests {
     }
 }
 
-enum FeatureA: DependnencyRegistering {
+enum FeatureA: DependencyRegistering {
     static func register(in container: Container) {
         container.register(ServiceA.self) { _ in ServiceA(id: 1) }
     }
 }
 
-enum FeatureB: DependnencyRegistering {
+enum FeatureB: DependencyRegistering {
     static func register(in container: Container) {
         container.register(ServiceB.self) { container in
             let dep: ServiceA = try! container.resolve(ServiceA.self)
@@ -102,3 +103,4 @@ final class ServiceB {
         self.service = service
     }
 }
+// swiftlint:enable force_try force_cast
