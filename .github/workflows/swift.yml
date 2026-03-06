@@ -46,13 +46,13 @@ jobs:
       - name: Resolve package dependencies
         run: |
           xcodebuild -resolvePackageDependencies \
-            -workspace MySkillo.xcworkspace \
+            -workspace MySkilo.xcworkspace \
             -scheme "${{ matrix.scheme }}"  # Resolve SPM for each scheme
 
       - name: Build and test ${{ matrix.scheme }}
         run: |
           xcodebuild test \
-            -workspace MySkillo.xcworkspace \
+            -workspace MySkilo.xcworkspace \
             -scheme "${{ matrix.scheme }}" \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
             CODE_SIGNING_ALLOWED=NO        # Disable signing on CI
