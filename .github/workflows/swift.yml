@@ -53,7 +53,7 @@ jobs:
           xcodebuild test \
             -workspace MySkilo.xcworkspace \
             -scheme "${{ matrix.scheme }}" \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -destination 'platform=iOS Simulator,name=iPhone 17,OS=26.2' \
             CODE_SIGNING_ALLOWED=NO        # Disable signing on CI
 
   swiftformat:
