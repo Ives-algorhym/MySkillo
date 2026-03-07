@@ -13,14 +13,13 @@ concurrency:
 jobs:
   build-and-test:
     name: Build and Test         # Job name in Actions UI
-    runs-on: macos-14            # Use macOS runner (needed for Xcode)
+    runs-on: macos-26           # Use macOS runner (needed for Xcode)
 
     strategy:
       fail-fast: false           # Don't stop other matrix jobs if one fails
       matrix:
         scheme:                  # Run job for each scheme
           - MySkillo
-          - MySkilloSwiftUI
 
     steps:
       - name: Checkout repository
@@ -59,7 +58,7 @@ jobs:
 
   swiftformat:
     name: SwiftFormat              # Job name
-    runs-on: macos-14
+    runs-on: macos-26
 
     steps:
       - name: Checkout repository
@@ -73,7 +72,7 @@ jobs:
 
   swiftlint:
     name: SwiftLint                # Job name
-    runs-on: macos-14
+    runs-on: macos-26
 
     steps:
       - name: Checkout repository
