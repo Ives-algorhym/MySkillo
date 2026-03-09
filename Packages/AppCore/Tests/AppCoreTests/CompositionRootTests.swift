@@ -51,16 +51,39 @@ struct CompositionRootTests {
         #expect(containerA === containerB)
     }
 
-    @Test("composition root returns the cached container on subsequent access")
-    func compositionRootRcontainer() {
+    @MainActor
+    @Test("composition root returns a root coordinator and coordinator expose root view controller")
+    func rootReturnsRootCoordinator() throws {
+        // arrange
         let sut = CompositionRoot(
             environment: .development,
             registry: FeatureRegistry(registrants: [])
         )
 
-        let containerA = sut.container
-        let containerB = sut.container
+        // act
 
-        #expect(containerA === containerB)
+        let coordinator = sut.makeUIKitRoot()
+        // assert
+        #expect(coordinator.rootViewController is RootViewController)
+    }
+
+    @MainActor
+    @Test("root coordinator start does not change root view controller")
+    func rootCoordinatorStartDoesNBotReplaceRootViewController() throws {
+        // arrange
+        let sut = CompositionRoot(
+            environment: .development,
+            registry: FeatureRegistry(registrants: [])
+        )
+
+        // act
+
+        let coordinator = sut.makeUIKitRoot()
+        let rootBefore = coordinator.rootViewController
+
+        coordinator.start()
+        // assert
+        #expect(coordinator.rootViewController ===
+                rootBefore)
     }
 }

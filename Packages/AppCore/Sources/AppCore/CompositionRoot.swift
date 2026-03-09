@@ -28,7 +28,7 @@ public class CompositionRoot {
         self.registry = registry
     }
 
-    @MainActor func makeUIKitRoot() -> UIViewController {
-        return .init()
+    @MainActor func makeUIKitRoot() -> RootCoordinating {
+        RootCoordinator()
     }
 }
