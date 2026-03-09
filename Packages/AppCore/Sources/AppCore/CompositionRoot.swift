@@ -23,12 +23,13 @@ public class CompositionRoot {
         return container
     }()
 
-    init(environment: Environment, registry: FeatureRegistry) {
+    public init(environment: Environment, registry: FeatureRegistry) {
         self.environment = environment
         self.registry = registry
     }
 
-    @MainActor func makeUIKitRoot() -> RootCoordinating {
+    @MainActor
+    public func makeUIKitRoot() -> RootCoordinating {
         RootCoordinator()
     }
 }

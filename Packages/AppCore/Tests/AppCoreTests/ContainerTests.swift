@@ -1,6 +1,6 @@
 // swiftlint:disable force_try force_cast
 //
-//  ContinerTest.swift
+//  ContainerTests.swift
 //  AppCore
 //
 //  Created by Ives Murillo on 3/5/26.
@@ -9,7 +9,7 @@
 @testable import AppCore
 import Testing
 
-struct AppcontainerTests {
+struct AppContainerTests {
     @Test("resolve returns an instance registered for the requested type")
     func registerAndResolve() throws {
         let container = Container()

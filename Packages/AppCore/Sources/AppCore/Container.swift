@@ -24,7 +24,7 @@ public final class Container {
         }
 
         guard let resolved = factory(self) as? T else {
-            throw ResolutionError.typeMissmatch
+            throw ResolutionError.typeMismatch
         }
 
         return resolved
@@ -33,5 +33,5 @@ public final class Container {
 
 enum ResolutionError: Error {
     case missingRegistration
-    case typeMissmatch
+    case typeMismatch
 }

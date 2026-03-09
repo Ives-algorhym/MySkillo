@@ -8,17 +8,15 @@
 import UIKit
 
 @MainActor
-protocol RootCoordinating {
+public protocol RootCoordinating {
     var rootViewController: UIViewController { get }
     func start()
 }
 
 @MainActor
-struct RootCoordinator: RootCoordinating {
-    let rootViewController: UIViewController = RootViewController()
-    func start() {
-
-    }
+public struct RootCoordinator: RootCoordinating {
+    public let rootViewController: UIViewController = RootViewController()
+    public func start() {}
 }
 
 final class RootViewController: UIViewController {}

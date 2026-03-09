@@ -11,7 +11,7 @@ import UIKit
 
 struct CompositionRootTests {
     @Test("bootstrap registers all feature dependencies into the container")
-    func compositionRootRegisterFeatures() throws {
+    func compositionRootRegisterFeatures() {
         let sut = CompositionRoot(
             environment: .development,
             registry: FeatureRegistry(registrants: [FeatureA.self])
@@ -25,7 +25,7 @@ struct CompositionRootTests {
     }
 
     @Test("bootstrap registers core dependencies before registering features")
-    func compositionRootRegisterCoreDependencies() throws {
+    func compositionRootRegisterCoreDependencies() {
         let sut = CompositionRoot(
             environment: .development,
             registry: FeatureRegistry(registrants: [])
@@ -53,7 +53,7 @@ struct CompositionRootTests {
 
     @MainActor
     @Test("composition root returns a root coordinator and coordinator expose root view controller")
-    func rootReturnsRootCoordinator() throws {
+    func rootReturnsRootCoordinator() {
         // arrange
         let sut = CompositionRoot(
             environment: .development,
@@ -69,7 +69,7 @@ struct CompositionRootTests {
 
     @MainActor
     @Test("root coordinator start does not change root view controller")
-    func rootCoordinatorStartDoesNBotReplaceRootViewController() throws {
+    func rootCoordinatorStartDoesNotReplaceRootViewController() {
         // arrange
         let sut = CompositionRoot(
             environment: .development,
@@ -83,7 +83,6 @@ struct CompositionRootTests {
 
         coordinator.start()
         // assert
-        #expect(coordinator.rootViewController ===
-                rootBefore)
+        #expect(coordinator.rootViewController === rootBefore)
     }
 }
