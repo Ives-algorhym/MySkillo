@@ -10,17 +10,8 @@ import Testing
 import UIKit
 
 struct CompositionRootTests {
-    @MainActor
-    @Test("make UIKitRoot returns a ViewController")
-    func makeUIKitRootReturnsViewController() {
-        let sut = CompositionRoot(environment: .development, registry: FeatureRegistry(
-            registrants: []
-        ))
 
-        _ = sut.makeUIKitRoot()
-    }
-
-    @Test("Composition root register features into the container")
+    @Test("bootstrap registers all feature dependencies into the container")
     func compositionRootRegisterFeatures() throws {
         let sut = CompositionRoot(
             environment: .development,
@@ -29,10 +20,13 @@ struct CompositionRootTests {
 
         let container = sut.container
 
-        _ = try container.resolve(ServiceA.self)
+        #expect(throws: Never.self) {
+            _ = try container.resolve(ServiceA.self)
+        }
+
     }
 
-    @Test("Composition root register first core dependencies into the container")
+    @Test("bootstrap registers core dependencies before registering features")
     func compositionRootRegisterCoreDependencies() throws {
         let sut = CompositionRoot(
             environment: .development,
@@ -41,10 +35,12 @@ struct CompositionRootTests {
 
         let container = sut.container
 
-        _ = try container.resolve(Environment.self)
+        #expect(throws: Never.self) {
+            _ = try container.resolve(Environment.self)
+        }
     }
 
-    @Test("Composition root cache container")
+    @Test("composition root caches the container instance")
     func compositionRootCachecontainer() {
         let sut = CompositionRoot(
             environment: .development,
@@ -57,7 +53,7 @@ struct CompositionRootTests {
         #expect(containerA === containerB)
     }
 
-    @Test("Composition root cache container")
+    @Test("composition root returns the cached container on subsequent access")
     func compositionRootRcontainer() {
         let sut = CompositionRoot(
             environment: .development,

@@ -9,7 +9,7 @@
 import Testing
 
 struct EnvirommentTests {
-    @Test("enviroment exposes configuration variants")
+    @Test("environment exposes all supported configuration variants")
     func enviromentExposesVariants() {
         let prod = Environment.production
         let dev = Environment.development

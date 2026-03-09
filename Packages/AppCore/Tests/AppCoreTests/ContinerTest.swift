@@ -10,7 +10,7 @@
 import Testing
 
 struct AppcontainerTests {
-    @Test("register + resolve returns instance")
+    @Test("resolve returns an instance registered for the requested type")
     func registerAndResolve() throws {
         let container = Container()
         container.register(ServiceA.self) { _ in ServiceA(id: 1) }
@@ -18,7 +18,7 @@ struct AppcontainerTests {
         _ = try container.resolve(ServiceA.self)
     }
 
-    @Test("resolve missing registration throws error")
+    @Test("resolve throws an error for an unregistered type")
     func resolveMissingRegistrationThrows() {
         let container = Container()
 
@@ -27,7 +27,7 @@ struct AppcontainerTests {
         }
     }
 
-    @Test("register overrides existing factory")
+    @Test("register replaces an existing factory for the same type")
     func registerOverridesExistingFactory() throws {
         let container = Container()
         container.register(ServiceA.self) { _ in ServiceA(id: 1) }
@@ -38,7 +38,7 @@ struct AppcontainerTests {
         #expect(service.id == 2)
     }
 
-    @Test("factory can resolve other dependencies")
+    @Test("a factory can resolve other dependencies from the container")
     func factoryResolveOtherDependencies() throws {
         let container = Container()
         container.register(ServiceA.self) { _ in ServiceA(id: 1) }
@@ -52,7 +52,7 @@ struct AppcontainerTests {
 }
 
 struct DependencyRegisteringTests {
-    @Test("registrant can register dependencies")
+    @Test("a registrant registers its dependencies into the container")
     func registrantCanRegisterDependencies() throws {
         let container = Container()
 
@@ -63,7 +63,7 @@ struct DependencyRegisteringTests {
 }
 
 struct FeatureRegistryTests {
-    @Test("register all calls each registrant")
+    @Test("registerAll invokes registration on every registrant")
     func registerAllCallsEachRegistrant() throws {
         let container = Container()
 
