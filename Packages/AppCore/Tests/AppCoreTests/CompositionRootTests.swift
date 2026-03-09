@@ -50,7 +50,7 @@ struct CompositionRootTests {
 
         #expect(containerA === containerB)
     }
-    
+
     @Test("composition root returns the cached container on subsequent access")
     func compositionRootRcontainer() {
         let sut = CompositionRoot(
