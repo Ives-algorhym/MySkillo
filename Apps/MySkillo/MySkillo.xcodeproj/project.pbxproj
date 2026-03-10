@@ -49,7 +49,6 @@
 		452689CB2F5A1E6700F19EA6 /* MySkilloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkilloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452689D72F5A1E6800F19EA6 /* MySkilloSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkilloSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		452689E12F5A1E6900F19EA6 /* MySkilloSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkilloSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		454A2E222F60C0320025E988 /* Resume */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Resume; path = ../../Packages/Resume; sourceTree = SOURCE_ROOT; };
 		454D4AC32F5A4CFA002A57E2 /* AppCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppCore; path = ../../Packages/AppCore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -95,6 +94,16 @@
 		452689E42F5A1E6900F19EA6 /* MySkilloSwiftUIUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MySkilloSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		454A2E232F60D9A20025E988 /* Platform */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		454A2E242F60D9B60025E988 /* Features */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -156,7 +165,7 @@
 				452689CC2F5A1E6700F19EA6 /* MySkilloSwiftUI */,
 				452689DA2F5A1E6900F19EA6 /* MySkilloSwiftUITests */,
 				452689E42F5A1E6900F19EA6 /* MySkilloSwiftUIUITests */,
-				45268A1B2F5A459D00F19EA6 /* Frameworks */,
+				45268A1B2F5A459D00F19EA6 /* Packages */,
 				452689942F5A1C0400F19EA6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,13 +183,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		45268A1B2F5A459D00F19EA6 /* Frameworks */ = {
+		45268A1B2F5A459D00F19EA6 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				454A2E222F60C0320025E988 /* Resume */,
+				454A2E242F60D9B60025E988 /* Features */,
+				454A2E232F60D9A20025E988 /* Platform */,
 				454D4AC32F5A4CFA002A57E2 /* AppCore */,
 			);
-			name = Frameworks;
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
