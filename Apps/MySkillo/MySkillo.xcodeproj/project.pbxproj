@@ -49,6 +49,7 @@
 		452689CB2F5A1E6700F19EA6 /* MySkilloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySkilloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452689D72F5A1E6800F19EA6 /* MySkilloSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkilloSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		452689E12F5A1E6900F19EA6 /* MySkilloSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkilloSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		454A2E222F60C0320025E988 /* Resume */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Resume; path = ../../Packages/Resume; sourceTree = SOURCE_ROOT; };
 		454D4AC32F5A4CFA002A57E2 /* AppCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppCore; path = ../../Packages/AppCore; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -176,6 +177,7 @@
 		45268A1B2F5A459D00F19EA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				454A2E222F60C0320025E988 /* Resume */,
 				454D4AC32F5A4CFA002A57E2 /* AppCore */,
 			);
 			name = Frameworks;
