@@ -83,4 +83,20 @@ struct CompositionRootTests {
         // assert
         #expect(tabBar.viewControllers?.first?.tabBarItem.title == "Resume")
     }
+
+    //MARK: - SwiftUI
+
+    @MainActor
+    @Test("root returns a SwiftUI root view")
+    func rootReturnsRootSwiftUIView() {
+        // arrange
+        let sut = CompositionRoot(
+            environment: .development,
+            registry: FeatureRegistry(registrants: [])
+        )
+
+        #expect(throws: Never.self) {
+            _ = sut.makeSwiftUIRoot()
+        }
+    }
 }

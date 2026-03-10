@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45268A1D2F5A459D00F19EA6 /* AppCore in Frameworks */ = {isa = PBXBuildFile; productRef = 45268A1C2F5A459D00F19EA6 /* AppCore */; };
+		454A2DA52F5FA31D0025E988 /* AppCore in Frameworks */ = {isa = PBXBuildFile; productRef = 454A2DA42F5FA31D0025E988 /* AppCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454A2DA52F5FA31D0025E988 /* AppCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +270,7 @@
 			);
 			name = MySkilloSwiftUI;
 			packageProductDependencies = (
+				454A2DA42F5FA31D0025E988 /* AppCore */,
 			);
 			productName = MySkilloSwiftUI;
 			productReference = 452689CB2F5A1E6700F19EA6 /* MySkilloSwiftUI.app */;
@@ -976,6 +979,10 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		45268A1C2F5A459D00F19EA6 /* AppCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppCore;
+		};
+		454A2DA42F5FA31D0025E988 /* AppCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AppCore;
 		};

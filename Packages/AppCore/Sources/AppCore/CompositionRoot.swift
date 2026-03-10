@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import UIKit
 
 @available(iOS 13.0, *)
@@ -32,5 +33,17 @@ public class CompositionRoot {
     @MainActor
     public func makeUIKitRoot() -> RootCoordinating {
         RootCoordinator()
+    }
+
+    @MainActor
+    public func makeSwiftUIRoot() -> some View {
+        return RootView()
+    }
+}
+
+@available(iOS 13.0, *)
+struct RootView: View {
+    var body: some View {
+        Text("My Skillo")
     }
 }

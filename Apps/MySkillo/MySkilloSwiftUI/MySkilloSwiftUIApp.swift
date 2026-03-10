@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import AppCore
 
 @main
 struct MySkilloSwiftUIApp: App {
+
+    let root = CompositionRoot(environment: .development,
+                          registry: .init(registrants: [])
+    )
+
+
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AnyView(root.makeSwiftUIRoot())
         }
     }
 }
