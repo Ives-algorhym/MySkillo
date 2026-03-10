@@ -96,16 +96,6 @@
 			path = MySkilloSwiftUIUITests;
 			sourceTree = "<group>";
 		};
-		454A2E232F60D9A20025E988 /* Platform */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Platform;
-			sourceTree = "<group>";
-		};
-		454A2E242F60D9B60025E988 /* Features */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Features;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,8 +176,6 @@
 		45268A1B2F5A459D00F19EA6 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				454A2E242F60D9B60025E988 /* Features */,
-				454A2E232F60D9A20025E988 /* Platform */,
 				454D4AC32F5A4CFA002A57E2 /* AppCore */,
 			);
 			name = Packages;
