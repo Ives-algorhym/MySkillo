@@ -9,14 +9,31 @@ import UIKit
 
 @MainActor
 public protocol RootCoordinating {
-    var rootViewController: UIViewController { get }
+    var rootViewController: UITabBarController { get }
     func start()
 }
 
 @MainActor
-public struct RootCoordinator: RootCoordinating {
-    public let rootViewController: UIViewController = RootViewController()
-    public func start() {}
+public class RootCoordinator: RootCoordinating {
+    public private(set) var rootViewController: UITabBarController = RootTabViewController()
+    public func start() {
+        let rootViewController = UIViewController()
+        rootViewController.tabBarItem = UITabBarItem(
+            title: "Resume",
+            image: nil,
+            selectedImage: nil
+        )
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [rootViewController]
+        if tabBarController.viewControllers?.count == 1 {
+            tabBarController.tabBar.isHidden = true
+        }
+        self.rootViewController = tabBarController
+    }
 }
 
-final class RootViewController: UIViewController {}
+final class RootTabViewController: UITabBarController {
+
+
+}
