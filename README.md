@@ -65,3 +65,121 @@ v0.1 — Ship the simplest working app (Resume Landing)
 	•	Build + test on PR (GitHub Actions)
 	•	Protect main (PR required + checks required)
 
+
+
+# Contributing
+
+## Git Workflow Conventions
+
+To keep the repository consistent and professional, follow the conventions below for branches, commits, and pull requests.
+
+---
+
+## Branch Naming
+
+Use this format:
+
+`<type>/<issue-number>-<short-kebab-description>`
+
+### Allowed branch types
+
+- `feature` — new user-facing functionality
+- `fix` — bug fixes
+- `chore` — maintenance or setup work
+- `refactor` — internal code improvements without changing behavior
+- `test` — test-only changes
+- `docs` — documentation updates
+- `ci` — CI/CD pipeline changes
+- `spike` — research or temporary exploration work
+
+### Examples
+
+- `feature/9-root-navigation-structure`
+- `feature/10-resume-feature-module`
+- `refactor/11-feature-entry-pattern`
+- `test/12-resume-feature-tests`
+- `docs/13-architecture-overview`
+- `ci/14-build-and-test-workflow`
+
+### Guidelines
+
+- Keep names short and readable
+- Use lowercase letters only
+- Use hyphens between words
+- Include the related GitHub issue number when possible
+
+---
+
+## Commit Message Convention
+
+Use this format:
+
+`type(scope): short message`
+
+### Common commit types
+
+- `feat`
+- `fix`
+- `refactor`
+- `test`
+- `docs`
+- `chore`
+- `ci`
+
+### Examples
+
+- `feat(app): add root tab bar structure`
+- `feat(resume): create resume feature module`
+- `refactor(core): extract feature entry contract`
+- `test(resume): add resume model tests`
+- `docs(architecture): add app structure overview`
+- `ci(github): add build and test workflow`
+
+### Guidelines
+
+- Write commits in present tense
+- Keep each commit focused on one logical change
+- Make the message specific
+- Avoid vague messages like `update`, `fix stuff`, or `changes`
+
+---
+
+## Pull Request Title Convention
+
+Use this format:
+
+`[Issue-Number] Type: Short description`
+
+### Examples
+
+- `[9] Feature: Setup root navigation structure`
+- `[10] Feature: Create ResumeFeature module`
+- `[11] Refactor: Define feature entry pattern`
+- `[12] Test: Add baseline ResumeFeature tests`
+- `[13] Docs: Add architecture overview`
+
+---
+
+## Pull Request Description Template
+
+Use this template for every PR:
+
+```md
+## Summary
+Briefly describe what this PR changes.
+
+## Why
+Explain why this change is needed.
+
+## Changes
+- Added ...
+- Updated ...
+- Removed ...
+
+## Testing
+- [ ] Unit tests pass
+- [ ] App builds successfully
+- [ ] Verified manually in simulator
+
+## Notes
+Anything reviewers should know.
