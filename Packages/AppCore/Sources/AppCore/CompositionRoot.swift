@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+@available(iOS 13.0, *)
 public class CompositionRoot {
     private let environment: Environment
     private let registry: FeatureRegistry

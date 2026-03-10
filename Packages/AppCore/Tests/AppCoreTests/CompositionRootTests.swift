@@ -61,15 +61,14 @@ struct CompositionRootTests {
         )
 
         // act
-
         let coordinator = sut.makeUIKitRoot()
         // assert
-        #expect(coordinator.rootViewController is RootViewController)
+        #expect(coordinator.rootViewController is RootTabViewController)
     }
 
     @MainActor
-    @Test("root coordinator start does not change root view controller")
-    func rootCoordinatorStartDoesNotReplaceRootViewController() {
+    @Test("tab bar shows resume tab Resume")
+    func rootShowResumeTabFirst() {
         // arrange
         let sut = CompositionRoot(
             environment: .development,
@@ -77,12 +76,11 @@ struct CompositionRootTests {
         )
 
         // act
-
         let coordinator = sut.makeUIKitRoot()
-        let rootBefore = coordinator.rootViewController
-
         coordinator.start()
+        let tabBar = coordinator.rootViewController
+
         // assert
-        #expect(coordinator.rootViewController === rootBefore)
+        #expect(tabBar.viewControllers?.first?.tabBarItem.title == "Resume")
     }
 }
