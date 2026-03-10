@@ -9,7 +9,7 @@ let package = Package(
         .library(
             name: "AppCore",
             targets: ["AppCore"]
-        )
+        ),
     ],
     targets: [
         .target(
@@ -18,6 +18,6 @@ let package = Package(
         .testTarget(
             name: "AppCoreTests",
             dependencies: ["AppCore"]
-        )
+        ),
     ]
 )
