@@ -15,14 +15,14 @@ final class ResumeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray4
+        view.backgroundColor = .systemBlue
 
         contentStack.axis = .vertical
         contentStack.spacing = 20
         contentStack.alignment = .center
 
         view.addSubview(contentStack)
-        view.translatesAutoresizingMaskIntoConstraints = false
+        contentStack.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate(
 [
