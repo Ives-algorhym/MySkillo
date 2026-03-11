@@ -1,11 +1,9 @@
 force_try:
-    excluded:
-        - "**/*Tests/**/*.swift"
+  severity: warning
 
 force_cast:
-    excluded:
-        - "**/*Tests/**/*.swift"
+  severity: warning
 
-unusedArguments:
+unused_arguments:
   excluded:
     - "Apps/MySkillo/MySkillo/AppDelegate.swift"
