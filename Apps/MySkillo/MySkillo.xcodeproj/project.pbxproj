@@ -51,6 +51,7 @@
 		452689E12F5A1E6900F19EA6 /* MySkilloSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySkilloSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454A2E652F60DF6E0025E988 /* Resume */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Resume; path = ../../Packages/Features/Resume; sourceTree = SOURCE_ROOT; };
 		454D4AC32F5A4CFA002A57E2 /* AppCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppCore; path = ../../Packages/AppCore; sourceTree = SOURCE_ROOT; };
+		4567EB392F6134ED00456817 /* FeatureContracts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FeatureContracts; path = ../../Packages/FeatureContracts; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -177,6 +178,7 @@
 		45268A1B2F5A459D00F19EA6 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				4567EB3A2F61350E00456817 /* FeatureSupport */,
 				454A2E662F60DFAD0025E988 /* Features */,
 				454D4AC32F5A4CFA002A57E2 /* AppCore */,
 			);
@@ -189,6 +191,14 @@
 				454A2E652F60DF6E0025E988 /* Resume */,
 			);
 			path = Features;
+			sourceTree = "<group>";
+		};
+		4567EB3A2F61350E00456817 /* FeatureSupport */ = {
+			isa = PBXGroup;
+			children = (
+				4567EB392F6134ED00456817 /* FeatureContracts */,
+			);
+			path = FeatureSupport;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
