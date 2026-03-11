@@ -10,6 +10,7 @@ import UIKit
 
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
+    // swiftformat:disable unusedArguments
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -17,6 +18,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    // swiftformat:disable unusedArguments
     func application(
         _ application: UIApplication,
         configurationForConnecting connectingSceneSession: UISceneSession,
