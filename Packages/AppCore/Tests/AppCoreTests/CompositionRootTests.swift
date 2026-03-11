@@ -84,7 +84,7 @@ struct CompositionRootTests {
         #expect(tabBar.viewControllers?.first?.tabBarItem.title == "Resume")
     }
 
-    //MARK: - SwiftUI
+    // MARK: - SwiftUI
 
     @MainActor
     @Test("root returns a SwiftUI root view")

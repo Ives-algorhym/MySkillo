@@ -33,7 +33,4 @@ public class RootCoordinator: RootCoordinating {
     }
 }
 
-final class RootTabViewController: UITabBarController {
-
-
-}
+final class RootTabViewController: UITabBarController {}
