@@ -4,6 +4,9 @@ force_try:
 force_cast:
   severity: warning
 
+excluded:
+  - "**/Package.swift"
+
 unused_arguments:
   excluded:
     - "Apps/MySkillo/MySkillo/AppDelegate.swift"
