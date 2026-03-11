@@ -9,6 +9,7 @@
 @testable import AppCore
 import Testing
 
+@MainActor
 struct AppContainerTests {
     @Test("resolve returns an instance registered for the requested type")
     func registerAndResolve() throws {
@@ -51,6 +52,7 @@ struct AppContainerTests {
     }
 }
 
+@MainActor
 struct DependencyRegisteringTests {
     @Test("a registrant registers its dependencies into the container")
     func registrantCanRegisterDependencies() throws {
@@ -62,6 +64,7 @@ struct DependencyRegisteringTests {
     }
 }
 
+@MainActor
 struct FeatureRegistryTests {
     @Test("registerAll invokes registration on every registrant")
     func registerAllCallsEachRegistrant() throws {
