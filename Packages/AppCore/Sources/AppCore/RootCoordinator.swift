@@ -27,7 +27,7 @@ public class RootCoordinator: RootCoordinating {
 
     public func start() {
         let rootViewController = resumeProvider.makeResumeViewController()
-        
+
         rootViewController.tabBarItem = UITabBarItem(
             title: "Resume",
             image: nil,

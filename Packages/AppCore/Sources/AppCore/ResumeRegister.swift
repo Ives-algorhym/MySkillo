@@ -16,5 +16,4 @@ public enum ResumeRegister: DependencyRegistering {
             ResumeFeature()
         }
     }
-
 }

@@ -10,7 +10,6 @@ import UIKit
 
 @available(iOS 13.0, *)
 final class ResumeViewController: UIViewController {
-
     private let contentStack = UIStackView()
 
     override func viewDidLoad() {
@@ -25,30 +24,29 @@ final class ResumeViewController: UIViewController {
         contentStack.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate(
-[
-            contentStack.topAnchor
-                .constraint(
-                    equalTo: view.safeAreaLayoutGuide.topAnchor,
-                    constant: 16
-                ),
-            contentStack.leadingAnchor
-                .constraint(
-                    equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                    constant: 16
-                ),
-            contentStack.trailingAnchor
-                .constraint(
-                    equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                    constant: -16
-                ),
-            contentStack.bottomAnchor
-                .constraint(
-                    equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                    constant: -16
-                )
-
-        ]
-)
+            [
+                contentStack.topAnchor
+                    .constraint(
+                        equalTo: view.safeAreaLayoutGuide.topAnchor,
+                        constant: 16
+                    ),
+                contentStack.leadingAnchor
+                    .constraint(
+                        equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+                        constant: 16
+                    ),
+                contentStack.trailingAnchor
+                    .constraint(
+                        equalTo: view.safeAreaLayoutGuide.trailingAnchor,
+                        constant: -16
+                    ),
+                contentStack.bottomAnchor
+                    .constraint(
+                        equalTo: view.safeAreaLayoutGuide.bottomAnchor,
+                        constant: -16
+                    ),
+            ]
+        )
     }
 }
 

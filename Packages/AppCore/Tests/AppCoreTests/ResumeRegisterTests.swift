@@ -9,9 +9,7 @@
 import FeatureContracts
 import Testing
 
-@Suite("Resume Register Tests")
 struct ResumeRegisterTests {
-
     @MainActor
     @Test("Resume register register a provider")
     func registersResumeProvider() throws {
@@ -21,7 +19,7 @@ struct ResumeRegisterTests {
         ResumeRegister.register(in: container)
 
         #expect(throws: Never.self) {
-             _ = try container.resolve(ResumeFeatureProviding.self)
+            _ = try container.resolve(ResumeFeatureProviding.self)
         }
     }
 }

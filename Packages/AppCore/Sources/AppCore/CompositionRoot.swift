@@ -34,7 +34,6 @@ public class CompositionRoot {
 
     @MainActor
     public func makeUIKitRoot() -> RootCoordinating {
-
         let resumeProvider = try? container.resolve(ResumeFeatureProviding.self)
         return RootCoordinator(resumeProvider: resumeProvider ?? FallbackResumeProvider())
     }

@@ -5,12 +5,11 @@
 //  Created by Ives Murillo on 3/9/26.
 //
 
+@testable import AppCore
 import FeatureContracts
 import Testing
 import UIKit
-@testable import AppCore
 
-@Suite("Root Coordinator Tests")
 struct RootCoordinatorTests {
     @MainActor
     @Test("start sets resume as a root view and just one tab")
