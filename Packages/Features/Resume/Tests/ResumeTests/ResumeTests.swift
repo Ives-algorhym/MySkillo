@@ -9,4 +9,3 @@ import Testing
 
 @Suite("Resume tests")
 struct ResumeTests {}
-
