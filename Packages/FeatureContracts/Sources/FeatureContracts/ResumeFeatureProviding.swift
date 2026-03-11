@@ -5,4 +5,9 @@
 //  Created by Ives Murillo on 3/11/26.
 //
 
-protocol ResumeFeatureProviding {}
+import UIKit
+
+@MainActor
+public protocol ResumeFeatureProviding {
+    func makeResumeViewController() -> UIViewController
+}
