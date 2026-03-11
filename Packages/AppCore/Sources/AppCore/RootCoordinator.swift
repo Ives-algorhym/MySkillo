@@ -5,6 +5,7 @@
 //  Created by Ives Murillo on 3/9/26.
 //
 
+import FeatureContracts
 import UIKit
 
 @MainActor
@@ -16,8 +17,17 @@ public protocol RootCoordinating {
 @MainActor
 public class RootCoordinator: RootCoordinating {
     public private(set) var rootViewController: UITabBarController = RootTabViewController()
+    private let resumeProvider: ResumeFeatureProviding
+
+    public init(
+        resumeProvider: ResumeFeatureProviding
+    ) {
+        self.resumeProvider = resumeProvider
+    }
+
     public func start() {
-        let rootViewController = UIViewController()
+        let rootViewController = resumeProvider.makeResumeViewController()
+        
         rootViewController.tabBarItem = UITabBarItem(
             title: "Resume",
             image: nil,
