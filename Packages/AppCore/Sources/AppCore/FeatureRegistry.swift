@@ -12,6 +12,7 @@ public struct FeatureRegistry {
         self.registrants = registrants
     }
 
+    @MainActor
     public func registerAll(in container: Container) {
         for registrant in registrants {
             registrant.register(in: container)

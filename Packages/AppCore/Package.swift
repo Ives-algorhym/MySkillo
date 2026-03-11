@@ -11,9 +11,15 @@ let package = Package(
             targets: ["AppCore"]
         ),
     ],
+    dependencies: [
+        .package(path: "../../Features/Resume")
+    ],
     targets: [
         .target(
-            name: "AppCore"
+            name: "AppCore",
+            dependencies: [
+                .product(name: "Resume", package: "Resume")
+            ]
         ),
         .testTarget(
             name: "AppCoreTests",
