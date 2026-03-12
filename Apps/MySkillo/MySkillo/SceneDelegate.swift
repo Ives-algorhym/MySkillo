@@ -20,10 +20,11 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let root = CompositionRoot(
             environment: .development,
-            registry: FeatureRegistry(registrants: [])
+            registry: FeatureRegistry(registrants: [ResumeRegister.self])
         )
 
         let coordinator = root.makeUIKitRoot()
+
         coordinator.start()
 
         let window = UIWindow(windowScene: windowScene)

@@ -5,11 +5,13 @@
 //  Created by Ives Murillo on 3/6/26.
 //
 
+import FeatureContracts
 import Foundation
 import SwiftUI
 import UIKit
 
 @available(iOS 13.0, *)
+@MainActor
 public class CompositionRoot {
     private let environment: Environment
     private let registry: FeatureRegistry
@@ -32,12 +34,19 @@ public class CompositionRoot {
 
     @MainActor
     public func makeUIKitRoot() -> RootCoordinating {
-        RootCoordinator()
+        let resumeProvider = try? container.resolve(ResumeFeatureProviding.self)
+        return RootCoordinator(resumeProvider: resumeProvider ?? FallbackResumeProvider())
     }
 
     @MainActor
     public func makeSwiftUIRoot() -> some View {
         return RootView()
+    }
+
+    private struct FallbackResumeProvider: ResumeFeatureProviding {
+        func makeResumeViewController() -> UIViewController {
+            UIViewController()
+        }
     }
 }
 

@@ -9,6 +9,7 @@
 import Testing
 import UIKit
 
+@MainActor
 struct CompositionRootTests {
     @Test("bootstrap registers all feature dependencies into the container")
     func compositionRootRegisterFeatures() {
