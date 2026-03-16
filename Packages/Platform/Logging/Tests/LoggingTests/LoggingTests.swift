@@ -10,6 +10,5 @@ import Testing
 
 @Suite()
 struct LoggingTests {
-    @Test func testLogging() {}
+    @Test func logging() {}
 }
-
