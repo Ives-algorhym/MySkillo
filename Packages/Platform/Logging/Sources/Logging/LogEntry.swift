@@ -6,5 +6,5 @@
 //
 
 struct LogEntry {
-    let message: String
+  let message: String
 }

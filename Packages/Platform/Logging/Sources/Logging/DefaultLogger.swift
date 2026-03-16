@@ -6,15 +6,15 @@
 //
 
 final class DefaultLogger: Logger {
-    private let sinks: [any LogSink]
+  private let sinks: [any LogSink]
 
-    init(sinks: [any LogSink]) {
-        self.sinks = sinks
-    }
+  init(sinks: [any LogSink]) {
+    self.sinks = sinks
+  }
 
-    func log(_ entry: LogEntry) {
-        for sink in sinks {
-            sink.write(entry)
-        }
+  func log(_ entry: LogEntry) {
+    for sink in sinks {
+      sink.write(entry)
     }
+  }
 }

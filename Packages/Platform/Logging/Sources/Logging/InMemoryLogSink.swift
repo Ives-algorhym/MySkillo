@@ -6,9 +6,9 @@
 //
 
 final class InMemoryLogSink: LogSink {
-    private(set) var entries: [LogEntry] = []
+  private(set) var entries: [LogEntry] = []
 
-    func write(_ entry: LogEntry) {
-        entries.append(entry)
-    }
+  func write(_ entry: LogEntry) {
+    entries.append(entry)
+  }
 }
