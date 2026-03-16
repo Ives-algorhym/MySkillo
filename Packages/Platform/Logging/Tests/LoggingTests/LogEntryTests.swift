@@ -14,7 +14,7 @@ struct LogEntryTests {
     func entryKeepsMessage() {
         // Arrange
         let sut = LogEntry(message: "Initial message")
-      // Assert
+        // Assert
         #expect(sut.message == "Initial message")
     }
 }

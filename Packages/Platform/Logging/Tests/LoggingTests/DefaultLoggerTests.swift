@@ -10,7 +10,6 @@ import Testing
 
 @Suite("Default Logger Tests")
 struct DefaultLoggerTests {
-
     @Test("default logger forwards entry to sink")
     func defaultLoggerForwardsEntryToSink() {
         // Design note:
@@ -67,7 +66,6 @@ struct DefaultLoggerTests {
         // Design note:
         // DefaultLogger should depend on a LogSink abstraction so sinks can vary.
         // Arrange
-
         let logger = DefaultLogger(sinks: [])
         let entry = LogEntry(message: "Hello")
 
@@ -76,5 +74,4 @@ struct DefaultLoggerTests {
         // Assert
         #expect(true)
     }
-
 }
