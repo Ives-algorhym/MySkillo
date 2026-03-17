@@ -53,6 +53,7 @@
 		454D4AC32F5A4CFA002A57E2 /* AppCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AppCore; path = ../../Packages/AppCore; sourceTree = SOURCE_ROOT; };
 		4567EB392F6134ED00456817 /* FeatureContracts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FeatureContracts; path = ../../Packages/FeatureContracts; sourceTree = SOURCE_ROOT; };
 		4567EB7A2F6281B300456817 /* Logging */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logging; path = ../../Packages/Platform/Logging; sourceTree = SOURCE_ROOT; };
+		4567EBFC2F691AFA00456817 /* PlatformContracts */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PlatformContracts; path = ../../Packages/Platform/PlatformContracts; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -206,6 +207,7 @@
 		4567EB7B2F6281C800456817 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				4567EBFC2F691AFA00456817 /* PlatformContracts */,
 				4567EB7A2F6281B300456817 /* Logging */,
 			);
 			path = Platform;
