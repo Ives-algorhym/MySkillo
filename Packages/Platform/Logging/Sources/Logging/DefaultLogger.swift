@@ -5,14 +5,14 @@
 //  Created by Ives Murillo on 3/16/26.
 //
 
-final class DefaultLogger: Logger {
+public final class DefaultLogger: Logger {
     private let sinks: [any LogSink]
 
-    init(sinks: [any LogSink]) {
+    public init(sinks: [any LogSink]) {
         self.sinks = sinks
     }
 
-    func log(_ entry: LogEntry) {
+    public func log(_ entry: LogEntry) {
         for sink in sinks {
             sink.write(entry)
         }

@@ -7,6 +7,7 @@
 //
 
 @testable import AppCore
+import Logging
 import Testing
 
 @MainActor

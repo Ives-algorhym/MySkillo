@@ -5,10 +5,10 @@
 //  Created by Ives Murillo on 3/16/26.
 //
 
-protocol LogSink {
+public protocol LogSink {
     func write(_ entry: LogEntry)
 }
 
-protocol Logger {
+public protocol Logger {
     func log(_ entry: LogEntry)
 }
