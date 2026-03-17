@@ -8,7 +8,7 @@
 import Foundation
 
 public final class Container {
-    private var factories: [ObjectIdentifier: (Container) -> Any] = [:]
+    private var factories: [ObjectIdentifier: (Container) throws -> Any] = [:]
 
     public init() {}
 

@@ -16,20 +16,26 @@ public class CompositionRoot {
     private let environment: Environment
     private let registry: FeatureRegistry
 
-    private(set) lazy var container: Container = {
-        let container = Container()
-
-        container.register(Environment.self) { _ in
-            self.environment
-        }
-
-        registry.registerAll(in: container)
-        return container
-    }()
+    private(set) lazy var container: Container  = makeContainer()
 
     public init(environment: Environment, registry: FeatureRegistry) {
         self.environment = environment
         self.registry = registry
+    }
+
+    private func makeContainer() -> Container {
+        let container = Container()
+        do {
+            try container.register(Environment.self) { _ in
+                self.environment
+            }
+
+            try registry.registerAll(in: container)
+            return container
+
+        } catch {
+            fatalError("Failed to build continer")
+        }
     }
 
     @MainActor
