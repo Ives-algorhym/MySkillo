@@ -5,10 +5,12 @@
 //  Created by Ives Murillo on 3/16/26.
 //
 
-final class InMemoryLogSink: LogSink {
-    private(set) var entries: [LogEntry] = []
+public final class InMemoryLogSink: LogSink {
+    public private(set) var entries: [LogEntry] = []
 
-    func write(_ entry: LogEntry) {
+    public init() {}
+
+    public func write(_ entry: LogEntry) {
         entries.append(entry)
     }
 }

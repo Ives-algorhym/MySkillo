@@ -13,9 +13,9 @@ public struct FeatureRegistry {
     }
 
     @MainActor
-    public func registerAll(in container: Container) {
+    public func registerAll(in container: Container) throws {
         for registrant in registrants {
-            registrant.register(in: container)
+            try registrant.register(in: container)
         }
     }
 }

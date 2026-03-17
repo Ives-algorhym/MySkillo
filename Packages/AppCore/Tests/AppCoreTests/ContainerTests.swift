@@ -7,6 +7,7 @@
 //
 
 @testable import AppCore
+import Logging
 import Testing
 
 @MainActor
@@ -14,7 +15,7 @@ struct AppContainerTests {
     @Test("resolve returns an instance registered for the requested type")
     func registerAndResolve() throws {
         let container = Container()
-        container.register(ServiceA.self) { _ in ServiceA(id: 1) }
+        try container.register(ServiceA.self) { _ in ServiceA(id: 1) }
 
         _ = try container.resolve(ServiceA.self)
     }
@@ -31,8 +32,8 @@ struct AppContainerTests {
     @Test("register replaces an existing factory for the same type")
     func registerOverridesExistingFactory() throws {
         let container = Container()
-        container.register(ServiceA.self) { _ in ServiceA(id: 1) }
-        container.register(ServiceA.self) { _ in ServiceA(id: 2) }
+        try container.register(ServiceA.self) { _ in ServiceA(id: 1) }
+        try container.register(ServiceA.self) { _ in ServiceA(id: 2) }
 
         let service = try container.resolve(ServiceA.self)
 
@@ -42,13 +43,39 @@ struct AppContainerTests {
     @Test("a factory can resolve other dependencies from the container")
     func factoryResolveOtherDependencies() throws {
         let container = Container()
-        container.register(ServiceA.self) { _ in ServiceA(id: 1) }
-        container.register(ServiceB.self) { container in
+        try container.register(ServiceA.self) { _ in ServiceA(id: 1) }
+        try container.register(ServiceB.self) { container in
             let service: ServiceA = try! container.resolve(ServiceA.self)
             return ServiceB(service: service)
         }
 
         _ = try container.resolve(ServiceB.self)
+    }
+
+    @Test("container wires logger to the configured in memory sink")
+    func containerWiresLoggerToConfiguredInMemorySink() throws {
+        // Arrange
+        let sut = Container()
+        let sink = InMemoryLogSink()
+
+        // Act
+        try sut.register(InMemoryLogSink.self) { _ in
+            sink
+        }
+
+        try sut.register(Logger.self) { resolver in
+            let resolvedSink = try resolver.resolve(InMemoryLogSink.self)
+            return DefaultLogger(sinks: [resolvedSink])
+        }
+
+        let logger = try sut.resolve(Logger.self)
+        let resolvedSink = try sut.resolve(InMemoryLogSink.self)
+
+        logger.log(LogEntry(message: "Logged"))
+
+        // Assert
+        #expect(resolvedSink.entries.count == 1)
+        #expect(resolvedSink.entries.first?.message == "Logged")
     }
 }
 
@@ -58,7 +85,7 @@ struct DependencyRegisteringTests {
     func registrantCanRegisterDependencies() throws {
         let container = Container()
 
-        FeatureA.register(in: container)
+        try FeatureA.register(in: container)
 
         _ = try container.resolve(ServiceA.self)
     }
@@ -70,7 +97,7 @@ struct FeatureRegistryTests {
     func registerAllCallsEachRegistrant() throws {
         let container = Container()
 
-        FeatureRegistry(registrants: [FeatureA.self, FeatureB.self])
+        try FeatureRegistry(registrants: [FeatureA.self, FeatureB.self])
             .registerAll(in: container)
 
         _ = try container.resolve(ServiceA.self)
@@ -79,14 +106,14 @@ struct FeatureRegistryTests {
 }
 
 enum FeatureA: DependencyRegistering {
-    static func register(in container: Container) {
-        container.register(ServiceA.self) { _ in ServiceA(id: 1) }
+    static func register(in container: Container) throws {
+        try container.register(ServiceA.self) { _ in ServiceA(id: 1) }
     }
 }
 
 enum FeatureB: DependencyRegistering {
-    static func register(in container: Container) {
-        container.register(ServiceB.self) { container in
+    static func register(in container: Container) throws {
+        try container.register(ServiceB.self) { container in
             let dep: ServiceA = try! container.resolve(ServiceA.self)
             return ServiceB(service: dep)
         }
