@@ -16,7 +16,7 @@ public class CompositionRoot {
     private let environment: Environment
     private let registry: FeatureRegistry
 
-    private(set) lazy var container: Container  = makeContainer()
+    private(set) lazy var container: Container = makeContainer()
 
     public init(environment: Environment, registry: FeatureRegistry) {
         self.environment = environment

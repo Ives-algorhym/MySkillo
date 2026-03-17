@@ -60,14 +60,13 @@ struct AppContainerTests {
 
         // Act
         try sut.register(InMemoryLogSink.self) { _ in
-           sink
+            sink
         }
 
         try sut.register(Logger.self) { resolver in
             let resolvedSink = try resolver.resolve(InMemoryLogSink.self)
             return DefaultLogger(sinks: [resolvedSink])
         }
-
 
         let logger = try sut.resolve(Logger.self)
         let resolvedSink = try sut.resolve(InMemoryLogSink.self)

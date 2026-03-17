@@ -22,7 +22,6 @@ struct LoggingTests {
         // Assert
         #expect(sink.entries.count == 1)
         #expect(sink.entries[0].message == "Client log")
-
     }
 }
 
