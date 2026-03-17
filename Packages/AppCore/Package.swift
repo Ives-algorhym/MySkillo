@@ -13,12 +13,14 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../../Features/Resume"),
+        .package(path: "../../Platform/Logging")
     ],
     targets: [
         .target(
             name: "AppCore",
             dependencies: [
                 .product(name: "Resume", package: "Resume"),
+                .product(name: "Logging", package: "Logging")
             ]
         ),
         .testTarget(
