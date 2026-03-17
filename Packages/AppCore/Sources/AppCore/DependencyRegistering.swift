@@ -7,5 +7,5 @@
 
 public protocol DependencyRegistering {
     @MainActor
-    static func register(in container: Container)
+    static func register(in container: Container) throws
 }

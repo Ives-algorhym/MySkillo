@@ -16,7 +16,7 @@ struct ResumeRegisterTests {
         // Arrange
         let container = Container()
 
-        ResumeRegister.register(in: container)
+        try ResumeRegister.register(in: container)
 
         #expect(throws: Never.self) {
             _ = try container.resolve(ResumeFeatureProviding.self)

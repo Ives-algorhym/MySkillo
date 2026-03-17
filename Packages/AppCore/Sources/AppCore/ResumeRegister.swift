@@ -11,8 +11,8 @@ import Resume
 @available(iOS 13.0, *)
 public enum ResumeRegister: DependencyRegistering {
     @MainActor
-    public static func register(in container: Container) {
-        container.register(ResumeFeatureProviding.self) { _ in
+    public static func register(in container: Container) throws {
+        try container.register(ResumeFeatureProviding.self) { _ in
             ResumeFeature()
         }
     }

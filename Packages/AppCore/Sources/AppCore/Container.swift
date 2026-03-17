@@ -12,9 +12,9 @@ public final class Container {
 
     public init() {}
 
-    func register<T>(_ type: T.Type, factory: @escaping (Container) -> T) {
+    func register<T>(_ type: T.Type, factory: @escaping (Container) throws -> T) throws {
         factories[ObjectIdentifier(type)] = { container in
-            factory(container)
+            try factory(container)
         }
     }
 
@@ -23,7 +23,7 @@ public final class Container {
             throw ResolutionError.missingRegistration
         }
 
-        guard let resolved = factory(self) as? T else {
+        guard let resolved = try factory(self) as? T else {
             throw ResolutionError.typeMismatch
         }
 
