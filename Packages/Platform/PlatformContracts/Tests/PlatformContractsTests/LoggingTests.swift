@@ -5,8 +5,8 @@
 //  Created by Ives Murillo on 3/17/26.
 //
 
-@testable import PlatformContracts
 import Testing
+@testable import PlatformContracts
 
 @Suite("Logging contract tests")
 struct LoggingTests {
