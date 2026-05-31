@@ -72,4 +72,3 @@ public class RootCoordinator: RootCoordinating {
         self.rootViewController = tabBarController
     }
 }
-
