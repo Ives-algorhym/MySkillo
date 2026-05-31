@@ -28,7 +28,7 @@ import Foundation
 /// - Note: `Container` is not thread-safe. All registrations and resolutions should
 ///   occur on the same thread, typically the main thread via `@MainActor`.
 public final class Container {
-    private var factories: [ObjectIdentifier : (Container) throws -> Any] = [:]
+    private var factories: [ObjectIdentifier: (Container) throws -> Any] = [:]
 
     public init() {}
 

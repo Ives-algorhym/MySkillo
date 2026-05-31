@@ -5,12 +5,11 @@
 //  Created by Ives Murillo on 3/17/26.
 //
 
-import Testing
 @testable import PlatformContracts
+import Testing
 
 @Suite("Logging contract tests")
 struct LoggingTests {
-
     @Test("log can be called from protocol")
     func logCanBeCalledFromProtocol() {
         // Arrange
@@ -23,7 +22,5 @@ struct LoggingTests {
 }
 
 struct LoggerSpy: Logging {
-    func log(_ string: String) {
-
-    }
+    func log(_: String) {}
 }

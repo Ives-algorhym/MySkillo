@@ -65,7 +65,7 @@ import UIKit
 public class CompositionRoot {
     /// The application environment configuration (e.g., production, development).
     private let environment: Environment
-    
+
     /// The registry containing all feature module dependency registrants.
     private let registry: FeatureRegistry
 
@@ -148,4 +148,3 @@ public class CompositionRoot {
         }
     }
 }
-
