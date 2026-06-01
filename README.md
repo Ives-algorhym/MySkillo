@@ -1,3 +1,7 @@
+
+<img width="1414" height="851" alt="Screenshot 2026-05-31 at 6 58 31 PM" src="https://github.com/user-attachments/assets/4aaa0da3-bfee-4eb4-bb7e-8071f4dd74fb" />
+
+
 # MySkills iOS
 
 A personal “enterprise-style” iOS app to showcase real-world engineering skills:
