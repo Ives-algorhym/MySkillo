@@ -10,6 +10,10 @@
 
 ---
 
+> [!NOTE]
+> 🔗 All documentation links (Discussions, Wiki, PRD, Issues) are being actively set up.
+> Check back shortly — architecture decisions, BDD scenarios, and feature specs will be linked here as they are published.
+
 ## What is MySkillo
 
 iOS engineers consistently underperform on behavioral interview questions — not from lack of experience, but from lack of structured, iOS-specific practice. MySkillo lets engineers record a coached "Tell me about yourself" answer, then receive on-device AI feedback calibrated to what iOS hiring managers actually evaluate. All ML inference runs on-device via Core ML — no audio or video ever leaves the device.
@@ -77,7 +81,7 @@ Swift packages enforce this at compile time — not by convention, not by code r
 | ML inference | On-device only | Privacy non-negotiable |
 | State modeling | Type-driven enums | Illegal states unrepresentable |
 
-> Full architecture decision log → [Discussion #1][d1] · [Discussion #2][d2] · [Discussion #3][d3] · [Discussion #4][d4] · [Discussion #5][d5]
+> (will be available soom)Full architecture decision log → [Discussion #1][d1] · [Discussion #2][d2] · [Discussion #3][d3] · [Discussion #4][d4] · [Discussion #5][d5]
 
 ---
 
