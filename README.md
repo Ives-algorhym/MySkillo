@@ -246,11 +246,11 @@ This is where the work lives. Not just the code.
 | [Architecture Overview](https://github.com/Ives-algorhym/MySkillo/wiki/Architecture-Overview) | Package map, dependency rule, communication patterns |
 | [BDD Scenarios](https://github.com/Ives-algorhym/MySkillo/wiki/Feature-—-Video-Resume-—-BDD-Scenarios) | 38 scenarios across 6 features — the test contract |
 | [Project structure](https://github.com/Ives-algorhym/MySkillo/discussions/68) | Why packages, dependency rule, communication patterns |
-| [Discussion #2 — PlatformContracts][d2] | Logging abstraction design |
-| [Discussion #3 — Logging][d3] | LogSink fan-out, DefaultLogger, InMemoryLogSink |
-| [Discussion #4 — FeatureContracts][d4] | UIKit + SwiftUI boundary contracts |
-| [Discussion #5 — AppCore]([https://github.com/Ives-algorhym/MySkillo/discussions/7](https://github.com/Ives-algorhym/MySkillo/wiki/AppCore-—-Overview)) | Composition root, DI container, wiring decisions |
-| [Discussion #47 — Video Resume kickoff](https://github.com/Ives-algorhym/MySkillo/discussions/45) | Full cross-functional feature kickoff thread |
+| [Discussion — PlatformContracts][d2] | Logging abstraction design |
+| [Discussion — Logging][d3] | LogSink fan-out, DefaultLogger, InMemoryLogSink |
+| [Discussion — FeatureContracts][d4] | UIKit + SwiftUI boundary contracts |
+| [Discussion — AppCore](https://github.com/Ives-algorhym/MySkillo/discussions/72) | Composition root, DI container, wiring decisions |
+| [Discussion — Video Resume kickoff](https://github.com/Ives-algorhym/MySkillo/discussions/45) | Full cross-functional feature kickoff thread |
 | [GitHub Issues](https://github.com/Ives-algorhym/MySkillo/issues) | 23 tickets across domain · application · infrastructure · presentation |
 
 ---
