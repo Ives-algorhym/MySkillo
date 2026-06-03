@@ -81,7 +81,7 @@ Swift packages enforce this at compile time — not by convention, not by code r
 | ML inference | On-device only | Privacy non-negotiable |
 | State modeling | Type-driven enums | Illegal states unrepresentable |
 
-> (will be available soom)Full architecture decision log → [Discussion #1][d1] · [Discussion #2][d2] · [Discussion #3][d3] · [Discussion #4][d4] · [Discussion #5][d5]
+> Full architecture decision log → [Discussions](https://github.com/Ives-algorhym/MySkillo/discussions/categories/architecture-decision)
 
 ---
 
@@ -141,7 +141,7 @@ This project follows a strict methodology stack applied in order before any code
 
 A ubiquitous language was defined and frozen before any type was created. Every term in code maps exactly to a term the PM and Designer would recognize.
 
-> Full ubiquitous language → [Wiki: Ubiquitous Language][wiki-ub]
+> Full ubiquitous language → [Wiki: Ubiquitous Language](https://github.com/Ives-algorhym/MySkillo/wiki/Feature-—-Video-Resume-—-Ubiquitous-Language)
 
 ```
 Never say       Always say
@@ -180,7 +180,7 @@ struct VideoResume {
 
 38 scenarios across 6 features written in plain language before a single test file was created. Each scenario maps directly to a failing test in the TDD cycle.
 
-> Full BDD scenario suite → [Wiki: BDD Scenarios][wiki-bdd]
+> Full BDD scenario suite → [Wiki: BDD Scenarios](https://github.com/Ives-algorhym/MySkillo/wiki/Feature-—-Video-Resume-—-BDD-Scenarios)
 
 ```
 Feature: Recording a Take
@@ -241,17 +241,17 @@ This is where the work lives. Not just the code.
 
 | Resource | Description |
 |---|---|
-| [PRD v1.0][prd] | Product requirements — problem, KPIs, 6-day timeline, risks |
-| [Ubiquitous Language][wiki-ub] | Every domain term defined and frozen before code |
-| [Architecture Overview][wiki-arch] | Package map, dependency rule, communication patterns |
-| [BDD Scenarios][wiki-bdd] | 38 scenarios across 6 features — the test contract |
-| [Discussion #1 — Project structure][d1] | Why packages, dependency rule, communication patterns |
+| [PRD v1.0](https://github.com/Ives-algorhym/MySkillo/wiki/Feature-%E2%80%90-Video-Resume-PRD-v1.0) | Product requirements — problem, KPIs, 6-day timeline, risks |
+| [Ubiquitous Language](https://github.com/Ives-algorhym/MySkillo/wiki/Feature-—-Video-Resume-—-Ubiquitous-Language) | Every domain term defined and frozen before code |
+| [Architecture Overview](https://github.com/Ives-algorhym/MySkillo/wiki/Architecture-Overview) | Package map, dependency rule, communication patterns |
+| [BDD Scenarios](https://github.com/Ives-algorhym/MySkillo/wiki/Feature-—-Video-Resume-—-BDD-Scenarios) | 38 scenarios across 6 features — the test contract |
+| [Project structure](https://github.com/Ives-algorhym/MySkillo/discussions/68) | Why packages, dependency rule, communication patterns |
 | [Discussion #2 — PlatformContracts][d2] | Logging abstraction design |
 | [Discussion #3 — Logging][d3] | LogSink fan-out, DefaultLogger, InMemoryLogSink |
 | [Discussion #4 — FeatureContracts][d4] | UIKit + SwiftUI boundary contracts |
-| [Discussion #5 — AppCore][d5] | Composition root, DI container, wiring decisions |
-| [Discussion #47 — Video Resume kickoff][d47] | Full cross-functional feature kickoff thread |
-| [GitHub Issues][issues] | 23 tickets across domain · application · infrastructure · presentation |
+| [Discussion #5 — AppCore](https://github.com/Ives-algorhym/MySkillo/discussions/7) | Composition root, DI container, wiring decisions |
+| [Discussion #47 — Video Resume kickoff](https://github.com/Ives-algorhym/MySkillo/discussions/45) | Full cross-functional feature kickoff thread |
+| [GitHub Issues](https://github.com/Ives-algorhym/MySkillo/issues) | 23 tickets across domain · application · infrastructure · presentation |
 
 ---
 
@@ -305,18 +305,3 @@ iOS Engineer
 > Open to UIKit, SwiftUI, or hybrid codebases.
 > Based in Sunnyvale, CA — open to remote.
 
----
-
-[d1]: ../../discussions/1
-[d2]: ../../discussions/2
-[d3]: ../../discussions/3
-[d4]: ../../discussions/4
-[d5]: ../../discussions/5
-[d47]: ../../discussions/47
-[prd]: docs/features/video-resume/PRD-v1.0.md
-[wiki-ub]: ../../wiki/Ubiquitous-Language
-[wiki-bdd]: ../../wiki/BDD-Scenarios
-[wiki-arch]: ../../wiki/Architecture-Overview
-[issues]: ../../issues
-[linkedin]: https://linkedin.com/in/your-handle
-[github]: https://github.com/your-handle
