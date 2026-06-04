@@ -2,7 +2,7 @@
 
 > An iOS engineer's interview coaching app — built by an iOS engineer, for iOS engineers.
 
-![Swift](https://img.shields.io/badge/Swift-5.9-orange?style=flat-square&logo=swift)
+![Swift](https://img.shields.io/badge/Swift-6.2-orange?style=flat-square&logo=swift)
 ![iOS](https://img.shields.io/badge/iOS-17%2B-blue?style=flat-square&logo=apple)
 ![Architecture](https://img.shields.io/badge/Architecture-Clean%20%2B%20MVVM%20%2B%20Coordinator-purple?style=flat-square)
 ![TDD](https://img.shields.io/badge/Testing-TDD%20%2B%20BDD%20%2B%20Swift%20Testing-green?style=flat-square)
