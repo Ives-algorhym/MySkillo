@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import Testing
-
 @testable import Resume
+import Testing
 
 @Suite("Take Tests")
 struct TakeTests {
