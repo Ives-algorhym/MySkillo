@@ -13,7 +13,7 @@ struct Take {
     let userIdentity: String
     let fileURL: URL
     let duration: TimeInterval
-    let recordedAt:Date
+    let recordedAt: Date
     let status: TakeStatus
 
     var isAnalyzable: Bool {

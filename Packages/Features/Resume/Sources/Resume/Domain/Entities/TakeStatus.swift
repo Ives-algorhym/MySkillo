@@ -5,7 +5,6 @@
 //  Created by Ives Murillo on 6/6/26.
 //
 
-
 enum TakeStatus {
     case discarded
     case recorded

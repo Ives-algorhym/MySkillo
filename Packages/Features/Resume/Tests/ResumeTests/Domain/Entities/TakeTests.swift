@@ -7,11 +7,11 @@
 
 import Foundation
 import Testing
+
 @testable import Resume
 
 @Suite("Take Tests")
 struct TakeTests {
-
     @Suite("isAnalyzable Tests")
     struct IsAnalyzableTests {
         @available(iOS 16.0, *)
@@ -133,7 +133,7 @@ struct TakeTests {
             // Arrange
             let error = TakeError.unknown
             // Act
-            let  sut = TakeStatus.failed(error)
+            let sut = TakeStatus.failed(error)
             // Assert
             guard case let .failed(storederror) = sut else {
                 Issue.record("Expected failed status")
@@ -169,7 +169,6 @@ struct TakeTests {
             #expect(sut.fileURL == fileURL)
             #expect(sut.duration == duration)
             #expect(sut.recordedAt == recordedAt)
-
         }
     }
 }
@@ -187,4 +186,3 @@ extension Take {
         )
     }
 }
-
