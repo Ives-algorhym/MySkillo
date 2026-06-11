@@ -7,6 +7,8 @@
 
 import FeatureContracts
 import Foundation
+import Logging
+import PlatformContracts
 import SwiftUI
 import UIKit
 
@@ -100,6 +102,12 @@ public class CompositionRoot {
         do {
             try container.register(Environment.self) { _ in
                 self.environment
+            }
+
+            try container.register(PlatformContracts.Logging.self) { _ in
+                LoggingAdapter(
+                    logger: DefaultLogger(sinks: [InMemoryLogSink()])
+                )
             }
 
             try registry.registerAll(in: container)

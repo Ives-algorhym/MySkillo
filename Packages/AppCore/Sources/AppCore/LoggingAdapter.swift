@@ -6,8 +6,9 @@
 //
 
 import Logging
+import PlatformContracts
 
-final class LoggingAdapter {
+final class LoggingAdapter: PlatformContracts.Logging {
 
     private let logger: Logger
 
