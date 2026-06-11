@@ -24,4 +24,17 @@ struct LoggingAdapterTests {
             #expect(spy.receivedMessages == ["Test message"])
         }
     }
+
+    @Test
+    func forwardsMultipleMessages() {
+        // Arrange
+        let spy = LoggerSpy()
+        let sut = LoggingAdapter(logger: spy)
+        // Act
+        sut.log("First message")
+        sut.log("Second message")
+        sut.log("Third message")
+        // Assert
+        #expect(spy.receivedMessages == ["First message", "Second message", "Third message"])
+    }
 }
