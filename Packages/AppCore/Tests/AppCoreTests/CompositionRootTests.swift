@@ -6,6 +6,7 @@
 //
 
 @testable import AppCore
+import PlatformContracts
 import Testing
 import UIKit
 
@@ -98,6 +99,27 @@ struct CompositionRootTests {
 
         #expect(throws: Never.self) {
             _ = sut.makeSwiftUIRoot()
+        }
+    }
+
+    // MARK: Logging
+
+    @Suite("Container - logging")
+    struct ContainerTests {
+        @MainActor
+        @Test
+        func resolvesLoggingWithoutThrowing() throws {
+            // Arrange
+            let environment = Environment.development
+            let registry = FeatureRegistry(registrants: [])
+            let sut = CompositionRoot(
+                environment: environment,
+                registry: registry
+            )
+            // Act - Assert
+            #expect(throws: Never.self) {
+                try sut.container.resolve(Logging.self)
+            }
         }
     }
 }

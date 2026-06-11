@@ -7,6 +7,8 @@
 
 import FeatureContracts
 import Foundation
+import Logging
+import PlatformContracts
 import SwiftUI
 import UIKit
 
@@ -102,6 +104,12 @@ public class CompositionRoot {
                 self.environment
             }
 
+            try container.register(PlatformContracts.Logging.self) { _ in
+                LoggingAdapter(
+                    logger: DefaultLogger(sinks: [InMemoryLogSink()])
+                )
+            }
+
             try registry.registerAll(in: container)
             return container
 
@@ -134,7 +142,7 @@ public class CompositionRoot {
     /// - Note: Must be called on the main thread due to SwiftUI requirements
     @MainActor
     public func makeSwiftUIRoot() -> some View {
-        return RootView()
+        RootView()
     }
 
     /// A fallback implementation of `ResumeFeatureProviding` used when the actual provider
