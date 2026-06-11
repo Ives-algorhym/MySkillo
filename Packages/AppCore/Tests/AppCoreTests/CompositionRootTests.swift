@@ -106,7 +106,6 @@ struct CompositionRootTests {
 
     @Suite("Container - logging")
     struct ContainerTests {
-
         @MainActor
         @Test
         func resolvesLoggingWithoutThrowing() throws {

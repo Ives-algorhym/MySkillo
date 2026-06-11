@@ -142,7 +142,7 @@ public class CompositionRoot {
     /// - Note: Must be called on the main thread due to SwiftUI requirements
     @MainActor
     public func makeSwiftUIRoot() -> some View {
-        return RootView()
+        RootView()
     }
 
     /// A fallback implementation of `ResumeFeatureProviding` used when the actual provider

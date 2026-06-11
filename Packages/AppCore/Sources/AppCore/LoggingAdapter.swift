@@ -9,7 +9,6 @@ import Logging
 import PlatformContracts
 
 final class LoggingAdapter: PlatformContracts.Logging {
-
     private let logger: Logger
 
     init(logger: Logger) {

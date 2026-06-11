@@ -7,7 +7,7 @@
 
 import Logging
 
-class LoggerSpy: Logger {
+final class LoggerSpy: Logger {
     private(set) var receivedEntries: [LogEntry] = []
     var receivedMessages: [String] {
         receivedEntries.map(\.message)

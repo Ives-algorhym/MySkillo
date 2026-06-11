@@ -5,9 +5,9 @@
 //  Created by Ives Murillo on 6/10/26.
 //
 
-import Testing
-import Logging
 @testable import AppCore
+import Logging
+import Testing
 
 @Suite("Logging Adapter Tests")
 struct LoggingAdapterTests {
