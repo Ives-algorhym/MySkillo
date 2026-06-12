@@ -19,9 +19,9 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         #if DEBUG
-        let environment = Environment.development
+            let environment = Environment.development
         #else
-        let environment = Environment.production
+            let environment = Environment.production
         #endif
 
         let root = CompositionRoot(

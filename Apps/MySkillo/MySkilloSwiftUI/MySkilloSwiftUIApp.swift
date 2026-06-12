@@ -14,9 +14,9 @@ struct MySkilloSwiftUIApp: App {
 
     init() {
         #if DEBUG
-        let environment = Environment.development
+            let environment = Environment.development
         #else
-        let environment = Environment.production
+            let environment = Environment.production
         #endif
         root = CompositionRoot(
             environment: environment,
