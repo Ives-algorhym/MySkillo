@@ -1,0 +1,12 @@
+// ─────────────────────────────────────────────────────────────
+// Tests-Release.xcconfig — All 4 test targets, Release.
+// ─────────────────────────────────────────────────────────────
+
+#include "Release.xcconfig"
+
+PRODUCT_NAME = $(TARGET_NAME)
+MARKETING_VERSION = 1.0
+CURRENT_PROJECT_VERSION = 1
+GENERATE_INFOPLIST_FILE = YES
+SWIFT_EMIT_LOC_STRINGS = NO
+STRING_CATALOG_GENERATE_SYMBOLS = NO

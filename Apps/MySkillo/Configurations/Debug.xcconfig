@@ -1,0 +1,15 @@
+// ─────────────────────────────────────────────────────────────
+// Debug.xcconfig — All targets, Debug configuration.
+// ─────────────────────────────────────────────────────────────
+
+#include "Base.xcconfig"
+
+ONLY_ACTIVE_ARCH = YES
+GCC_OPTIMIZATION_LEVEL = 0
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+ENABLE_TESTABILITY = YES
+DEBUG_INFORMATION_FORMAT = dwarf
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG=1 $(inherited)
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG DEVELOPMENT $(inherited)
+MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE
+GCC_DYNAMIC_NO_PIC = NO

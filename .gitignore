@@ -59,3 +59,6 @@ playground.xcworkspace
 .vscode/
 .idea/
 *.swp
+
+# Local developer xcconfig — contains machine-specific signing identity, never commit
+**/Local.xcconfig

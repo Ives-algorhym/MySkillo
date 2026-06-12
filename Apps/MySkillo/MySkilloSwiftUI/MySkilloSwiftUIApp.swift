@@ -10,10 +10,19 @@ import SwiftUI
 
 @main
 struct MySkilloSwiftUIApp: App {
-    let root = CompositionRoot(
-        environment: .development,
-        registry: .init(registrants: [])
-    )
+    let root: CompositionRoot
+
+    init() {
+        #if DEBUG
+        let environment = Environment.development
+        #else
+        let environment = Environment.production
+        #endif
+        root = CompositionRoot(
+            environment: environment,
+            registry: .init(registrants: [])
+        )
+    }
 
     var body: some Scene {
         WindowGroup {

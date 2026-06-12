@@ -1,0 +1,3 @@
+// Copy this file to Local.xcconfig and fill in your Team ID.
+// Local.xcconfig is gitignored. This template is committed.
+DEVELOPMENT_TEAM = YOUR_TEAM_ID_HERE

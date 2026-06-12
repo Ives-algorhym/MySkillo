@@ -1,0 +1,28 @@
+// ─────────────────────────────────────────────────────────────
+// MySkillo-Release.xcconfig — UIKit app target, Release.
+// ─────────────────────────────────────────────────────────────
+
+#include "Release.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = algoives.MySkillo
+PRODUCT_NAME = $(TARGET_NAME)
+MARKETING_VERSION = 1.0
+CURRENT_PROJECT_VERSION = 1
+
+SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor
+
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks
+
+GENERATE_INFOPLIST_FILE = YES
+INFOPLIST_FILE = MySkillo/Info.plist
+
+INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen
+INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor
+
+SWIFT_EMIT_LOC_STRINGS = YES
+STRING_CATALOG_GENERATE_SYMBOLS = YES
