@@ -19,7 +19,8 @@ jobs:
       fail-fast: false           # Don't stop other matrix jobs if one fails
       matrix:
         scheme:                  # Run job for each scheme
-          - MySkillo
+          - MySkillo-UIKit
+          - MySkilloSwiftUI
 
     steps:
       - name: Checkout repository
