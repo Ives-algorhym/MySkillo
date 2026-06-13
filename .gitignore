@@ -62,3 +62,4 @@ playground.xcworkspace
 
 # Local developer xcconfig — contains machine-specific signing identity, never commit
 **/Local.xcconfig
+*.xcworkspace/xcshareddata/
