@@ -63,3 +63,6 @@ playground.xcworkspace
 # Local developer xcconfig — contains machine-specific signing identity, never commit
 **/Local.xcconfig
 *.xcworkspace/xcshareddata/
+
+# Xcode auto-generated default scheme — replaced by MySkillo-UIKit and MySkilloSwiftUI
+Apps/MySkillo/MySkillo.xcodeproj/xcshareddata/xcschemes/MySkillo.xcscheme
