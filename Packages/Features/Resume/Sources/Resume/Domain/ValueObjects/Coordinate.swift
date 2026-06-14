@@ -5,9 +5,7 @@
 //  Created by Ives Murillo on 6/12/26.
 //
 
-import Foundation
-
-struct Coordinate {
+struct Coordinate: Equatable {
     let latitude: Double
     let longitude: Double
 

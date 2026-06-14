@@ -5,7 +5,7 @@
 //  Created by Ives Murillo on 6/12/26.
 //
 
-struct  RequiredText {
+struct  RequiredText: Equatable {
     let value: String
 
     init?(_ value: String) {
