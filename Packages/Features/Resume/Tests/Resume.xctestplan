@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "0D30BC98-D31B-4957-903E-97310BEA49E7",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..\/..\/Packages\/Features\/Resume",
+        "identifier" : "ResumeTests",
+        "name" : "ResumeTests"
+      }
+    }
+  ],
+  "version" : 1
+}
