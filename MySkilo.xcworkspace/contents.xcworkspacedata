@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Apps/MySkillo/MySkillo.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Packages/Features/Resume/Tests/Resume.xctestplan">
+   </FileRef>
 </Workspace>
