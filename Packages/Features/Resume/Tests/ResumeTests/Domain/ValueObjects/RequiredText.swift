@@ -5,13 +5,13 @@
 //  Created by Ives Murillo on 6/12/26.
 //
 
-import Testing
 @testable import Resume
+import Testing
+
 @Suite("RequiredText Tests")
 struct RequiredTextTests {
     @Suite("Init")
     struct InitTests {
-
         @Test
         func whenEmptyString_returnsNil() {
             #expect(RequiredText("") == nil)

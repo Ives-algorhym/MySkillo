@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import Testing
 @testable import Resume
+import Testing
 
 @Suite("UserIdentity")
 struct UserIdentityTests {
-
     @Test func hasCorrectProperties() throws {
         // Arrange
         let id = UUID()
@@ -20,8 +19,8 @@ struct UserIdentityTests {
         let coordinate = try #require(
             Coordinate(latitude: 37.36, longitude: -122.03)
         )
-        let location = VerifiedLocation(
-            displayName: try #require(RequiredText("Sunnyvale, CA")),
+        let location = try VerifiedLocation(
+            displayName: #require(RequiredText("Sunnyvale, CA")),
             coordinate: coordinate
         )
         let createdAt = Date()

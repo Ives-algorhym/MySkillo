@@ -5,15 +5,13 @@
 //  Created by Ives Murillo on 6/12/26.
 //
 
-import Testing
 @testable import Resume
+import Testing
 
 @Suite("Coordinate Tests")
 struct CoordinateTests {
-
     @Suite("Latitude Init")
     struct LatitudeInitTests {
-
         @Test
         func whenLatitudeAbove90_returnsNil() {
             #expect(Coordinate(latitude: 91, longitude: 0) == nil)
@@ -32,14 +30,13 @@ struct CoordinateTests {
 
     @Suite("Longitude Init")
     struct LongitudeInitTests {
-
         @Test
         func whenLongitudeAbove180_returnsNil() {
             #expect(Coordinate(latitude: 45, longitude: 181) == nil)
         }
 
         @Test
-        func whenLongitudeeBelowNegative180_returnsNil() {
+        func whenLongitudeBelowNegative180_returnsNil() {
             #expect(Coordinate(latitude: 0, longitude: -181) == nil)
         }
 
