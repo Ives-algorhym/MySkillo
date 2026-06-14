@@ -5,7 +5,12 @@
 //  Created by Ives Murillo on 6/12/26.
 //
 
-struct  RequiredText: Equatable {
+/// A non-empty, whitespace-trimmed string value object.
+///
+/// Initialization fails if the input is empty or contains only whitespace.
+/// The stored `value` is always trimmed.
+struct RequiredText: Equatable {
+    /// The trimmed, non-empty string.
     let value: String
 
     init?(_ value: String) {
