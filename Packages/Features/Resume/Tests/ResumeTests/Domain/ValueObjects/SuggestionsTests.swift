@@ -13,10 +13,10 @@ struct SuggestionsTests {
     @Suite("Intit Tests")
     struct Initializer {
         @Test("Init")
-        func init_hasCorrectProperties() {
+        func init_hasCorrectProperties() throws {
             // Arrange
             let dimension: DimensionType = .eyeContact
-            let description: RequiredText = .init("keep eye contact")!
+            let description: RequiredText = try #require(.init("keep eye contact"))
             // Act
             let sut = Suggestion(
                 dimension: dimension,

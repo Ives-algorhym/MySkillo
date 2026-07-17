@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Testing
 @testable import Resume
+import Testing
 
 @Suite("CoachingReport")
 struct CoachingReportTests {
@@ -58,11 +58,12 @@ struct CoachingReportTests {
         }
 
         @Test("Has correct properties")
-        func init_hasCorrectProperties() {
+        func init_hasCorrectProperties() throws {
             // Arrange
             let takeId = UUID()
-            let overallScore = InterviewScore(82)!
-            let dimensionScores = [DimensionScore(dimension: .fillerWords, score: InterviewScore(82)!)]
+            let overallScore = try #require(InterviewScore(82))
+            let dimensionScore = try #require(InterviewScore(82))
+            let dimensionScores = [DimensionScore(dimension: .fillerWords, score: dimensionScore)]
             let generatedAt = Date()
             // Act
             let sut = CoachingReportFactory.make(

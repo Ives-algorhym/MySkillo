@@ -35,10 +35,9 @@ struct TakeTests {
         }
 
         @available(iOS 16.0, *)
-        @Test func whenStatusIsAnalyzed_returnsFalse() {
+        @Test func whenStatusIsAnalyzed_returnsFalse() throws {
             // Arrange
-            let suggestions = Suggestion.sample
-            let report = CoachingReportFactory.make()!
+            let report = try #require(CoachingReportFactory.make())
             let sut = Take.make(status: .analyzed(report))
             // Act
             let result = sut.isAnalyzable
@@ -70,10 +69,9 @@ struct TakeTests {
     @Suite("Is Promotable test")
     struct IsPromotableTests {
         @available(iOS 16.0, *)
-        @Test func whenStatusIsAnalyzed_returnsTrue() {
+        @Test func whenStatusIsAnalyzed_returnsTrue() throws {
             // Arrange
-            let suggestions = Suggestion.sample
-            let report = CoachingReportFactory.make()!
+            let report = try #require(CoachingReportFactory.make())
             let sut = Take.make(status: .analyzed(report))
             // Act
             let result = sut.isPromotable
@@ -115,10 +113,9 @@ struct TakeTests {
     @Suite("TakeStatus tests")
     struct TakeStatusTests {
         @Test
-        func analyzedStatus_storesCoachingReport() {
+        func analyzedStatus_storesCoachingReport() throws {
             // Arrange
-            let suggestions = Suggestion.sample
-            let report = CoachingReportFactory.make()!
+            let report = try #require(CoachingReportFactory.make())
             // Act
             let sut = TakeStatus.analyzed(report)
 

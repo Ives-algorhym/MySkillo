@@ -11,9 +11,9 @@ import Testing
 @Suite("DimensionScore")
 struct DimensionScoreTests {
     @Test("DimensionScore has correct properties")
-    func hasCorrectProperties() {
+    func hasCorrectProperties() throws {
         // Arrange
-        let score = InterviewScore(10)!
+        let score = try #require(InterviewScore(10))
         let sut = DimensionScore(dimension: .technicalDepth, score: score)
         // Act-Assert
         #expect(sut.dimension == .technicalDepth)
