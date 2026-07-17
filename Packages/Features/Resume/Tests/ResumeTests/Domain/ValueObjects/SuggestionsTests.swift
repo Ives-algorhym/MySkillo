@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  SuggestionsTests.swift
 //  Resume
 //
 //  Created by Ives Murillo on 7/16/26.
@@ -42,6 +42,6 @@ extension Suggestion {
         Suggestion(
             dimension: .pacing,
             text: .init("pacing too fast")!
-        )
+        ),
     ]
 }

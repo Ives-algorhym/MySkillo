@@ -10,7 +10,6 @@ import Testing
 
 @Suite("DimensionScore")
 struct DimensionScoreTests {
-
     @Test("DimensionScore has correct properties")
     func hasCorrectProperties() {
         // Arrange
@@ -20,6 +19,4 @@ struct DimensionScoreTests {
         #expect(sut.dimension == .technicalDepth)
         #expect(sut.score == score)
     }
-
 }
-

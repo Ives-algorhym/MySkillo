@@ -139,7 +139,7 @@ struct TakeTests {
             // Assert
             guard case let .failed(storederror) = sut else {
                 Issue.record("Expected failed status")
-                return 
+                return
             }
             #expect(storederror == error)
         }

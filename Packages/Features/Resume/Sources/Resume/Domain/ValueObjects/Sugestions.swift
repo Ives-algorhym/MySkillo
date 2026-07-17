@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Sugestions.swift
 //  Resume
 //
 //  Created by Ives Murillo on 7/16/26.

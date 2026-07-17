@@ -5,16 +5,14 @@
 //  Created by Ives Murillo on 6/30/26.
 //
 
-@testable import Resume
 import Foundation
 import Testing
+@testable import Resume
 
 @Suite("CoachingReport")
 struct CoachingReportTests {
-
     @Suite("init")
     struct InitTests {
-        // Arrange
         let sugestion1 = Suggestion(
             dimension: .eyeContact,
             text: .init("keep eye contact")!
@@ -32,10 +30,8 @@ struct CoachingReportTests {
             text: .init("improve struture")!
         )
 
-
         @Test("With more than limit suggestions fail")
         func init_withMoreThanLimitSuggestionsFail() {
-
             let suggestions = [sugestion1, sugestion2, sugestion3, sugestion4]
             // Act
             let sut = CoachingReportFactory.make(suggestion: suggestions)
@@ -81,11 +77,10 @@ struct CoachingReportTests {
             #expect(sut?.dimensionScores == dimensionScores)
             #expect(sut?.generatedAt == generatedAt)
         }
-
     }
 }
 
-struct CoachingReportFactory {
+enum CoachingReportFactory {
     static func make(
         takeID: UUID = .init(),
         overallScore: InterviewScore = .init(82)!,
