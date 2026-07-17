@@ -30,7 +30,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:../../Packages/Features/Resume/Tests/Resume.xctestplan">
+            reference = "container:../../Packages/Features/Resume/Tests/Resume.xctestplan"
+            default = "YES">
          </TestPlanReference>
       </TestPlans>
       <Testables>
