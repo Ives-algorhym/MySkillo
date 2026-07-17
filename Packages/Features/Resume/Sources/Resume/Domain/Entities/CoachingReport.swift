@@ -8,7 +8,7 @@
 import Foundation
 
 struct CoachingReport: Equatable {
-    static let maximunSuggestions = 3
+    static let maximumSuggestions: Int = 3
 
     let takeID: UUID
     let overallScore: InterviewScore
@@ -23,7 +23,7 @@ struct CoachingReport: Equatable {
         suggestions: [Suggestion],
         generatedAt: Date
     ) {
-        guard suggestions.count <=  CoachingReport.maximunSuggestions else {
+        guard suggestions.count <= CoachingReport.maximumSuggestions else {
             return nil
         }
 
