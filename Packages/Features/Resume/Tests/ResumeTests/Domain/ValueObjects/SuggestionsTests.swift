@@ -20,11 +20,28 @@ struct SuggestionsTests {
             // Act
             let sut = Suggestion(
                 dimension: dimension,
-                description: description
+                text: description
             )
             // Assert
             #expect(sut.dimension == dimension)
-            #expect(sut.description == description)
+            #expect(sut.text == description)
         }
     }
+}
+
+extension Suggestion {
+    static let sample = [
+        Suggestion(
+            dimension: .eyeContact,
+            text: .init("keep eye contact")!
+        ),
+        Suggestion(
+            dimension: .fillerWords,
+            text: .init("avoid filling words")!
+        ),
+        Suggestion(
+            dimension: .pacing,
+            text: .init("pacing too fast")!
+        )
+    ]
 }

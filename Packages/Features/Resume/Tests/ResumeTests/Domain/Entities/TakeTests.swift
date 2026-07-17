@@ -37,7 +37,8 @@ struct TakeTests {
         @available(iOS 16.0, *)
         @Test func whenStatusIsAnalyzed_returnsFalse() {
             // Arrange
-            let report = CoachingReport()
+            let suggestions = Suggestion.sample
+            let report = CoachingReportFactory.make()!
             let sut = Take.make(status: .analyzed(report))
             // Act
             let result = sut.isAnalyzable
@@ -71,7 +72,8 @@ struct TakeTests {
         @available(iOS 16.0, *)
         @Test func whenStatusIsAnalyzed_returnsTrue() {
             // Arrange
-            let report = CoachingReport()
+            let suggestions = Suggestion.sample
+            let report = CoachingReportFactory.make()!
             let sut = Take.make(status: .analyzed(report))
             // Act
             let result = sut.isPromotable
@@ -115,7 +117,8 @@ struct TakeTests {
         @Test
         func analyzedStatus_storesCoachingReport() {
             // Arrange
-            let report = CoachingReport()
+            let suggestions = Suggestion.sample
+            let report = CoachingReportFactory.make()!
             // Act
             let sut = TakeStatus.analyzed(report)
 
@@ -136,6 +139,7 @@ struct TakeTests {
             // Assert
             guard case let .failed(storederror) = sut else {
                 Issue.record("Expected failed status")
+                return 
             }
             #expect(storederror == error)
         }
