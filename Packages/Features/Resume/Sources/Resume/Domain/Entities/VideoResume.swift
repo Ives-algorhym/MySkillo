@@ -14,8 +14,8 @@ struct VideoResume: Equatable {
 
     init?(from take: Take) {
         guard take.isPromotable else { return nil }
-        self.takeId = take.id
-        self.promotedAt = Date()
+        takeId = take.id
+        promotedAt = Date()
     }
 
     static func == (lhs: VideoResume, rhs: VideoResume) -> Bool {
