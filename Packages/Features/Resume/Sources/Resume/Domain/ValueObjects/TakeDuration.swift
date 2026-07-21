@@ -9,7 +9,7 @@ struct TakeDuration: Equatable {
     let duration: Int
 
     init?(_ duration: Int) {
-        guard duration > 0 && duration < 91 else { return nil }
+        guard duration > 0, duration < 91 else { return nil }
         self.duration = duration
     }
 

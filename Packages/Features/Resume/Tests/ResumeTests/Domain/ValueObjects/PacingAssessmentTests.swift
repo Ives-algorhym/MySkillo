@@ -10,7 +10,6 @@ import Testing
 
 @Suite("PacingAssessment Tests")
 struct PacingAssessmentTests {
-
     @Test("Has all required cases")
     func hasAllCases() {
         // Arrange
@@ -19,7 +18,7 @@ struct PacingAssessmentTests {
             .slightlyBelowIdeal,
             .ideal,
             .slightlyAboveIdeal,
-            .tooFast
+            .tooFast,
         ]
         // Act & Assert
         #expect(cases.count == 5)

@@ -12,4 +12,3 @@ enum PacingAssessment {
     case slightlyAboveIdeal
     case tooFast
 }
-
