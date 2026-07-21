@@ -13,10 +13,8 @@ import Testing
 struct TakeTests {
     @Suite("isAnalyzable Tests")
     struct IsAnalyzableTests {
-        @available(iOS 16.0, *)
         @Test func whenStatusIsDiscarded_returnsFalse() {
             // Arrange
-
             let sut = Take.make(status: .discarded)
             // Act
             let result = sut.isAnalyzable
@@ -24,7 +22,6 @@ struct TakeTests {
             #expect(result == false)
         }
 
-        @available(iOS 16.0, *)
         @Test func whenStatusIsRecorded_returnsTrue() {
             // Arrange
             let sut = Take.make(status: .recorded)
@@ -34,7 +31,6 @@ struct TakeTests {
             #expect(result == true)
         }
 
-        @available(iOS 16.0, *)
         @Test func whenStatusIsAnalyzed_returnsFalse() throws {
             // Arrange
             let report = try #require(CoachingReportFactory.make())
@@ -45,7 +41,6 @@ struct TakeTests {
             #expect(result == false)
         }
 
-        @available(iOS 16.0, *)
         @Test func whenStatusIsAnalyzing_returnsFalse() {
             // Arrange
             let sut = Take.make(status: .analyzing)
@@ -55,7 +50,6 @@ struct TakeTests {
             #expect(result == false)
         }
 
-        @available(iOS 16.0, *)
         @Test func whenStatusIsFailed_returnsFalse() {
             // Arrange
             let sut = Take.make(status: .failed(TakeError.unknown))
@@ -68,7 +62,6 @@ struct TakeTests {
 
     @Suite("Is Promotable test")
     struct IsPromotableTests {
-        @available(iOS 16.0, *)
         @Test func whenStatusIsAnalyzed_returnsTrue() throws {
             // Arrange
             let report = try #require(CoachingReportFactory.make())
@@ -79,7 +72,6 @@ struct TakeTests {
             #expect(result == true)
         }
 
-        @available(iOS 16.0, *)
         @Test func whenStatusIsRecorded_returnsFalse() {
             // Arrange
             let sut = Take.make(status: .recorded)
@@ -89,7 +81,6 @@ struct TakeTests {
             #expect(result == false)
         }
 
-        @available(iOS 16.0, *)
         @Test func whenStatusIsAnalyzing_returnsFalse() {
             // Arrange
             let sut = Take.make(status: .analyzing)
@@ -99,7 +90,6 @@ struct TakeTests {
             #expect(result == false)
         }
 
-        @available(iOS 16.0, *)
         @Test func whenStatusIsFailed_returnsFalse() {
             // Arrange
             let sut = Take.make(status: .failed(TakeError.unknown))
@@ -144,13 +134,12 @@ struct TakeTests {
 
     @Suite("Take Entity Tests")
     struct TakeEntityTests {
-        @available(iOS 16.0, *)
         @Test
         func storesAllRequiredProperties() {
             // Arrange
             let id = UUID()
             let userIdentity = "user-1"
-            let fileURL = URL(filePath: "/tmp/take.m4a")
+            let fileURL = URL(fileURLWithPath: "/tmp/take.m4a")
             let duration: TimeInterval = 45
             let recordedAt = Date()
 
@@ -173,13 +162,12 @@ struct TakeTests {
     }
 }
 
-@available(iOS 16.0, *)
 extension Take {
     static func make(status: TakeStatus) -> Self {
         Self(
             id: UUID(),
             userIdentity: "user-1",
-            fileURL: URL(filePath: "/tmp/file.m4a"),
+            fileURL: URL(fileURLWithPath: "/tmp/file.m4a"),
             duration: 30,
             recordedAt: Date(),
             status: status

@@ -13,7 +13,6 @@ import Testing
 struct VideoResumeTests {
     @Suite("init")
     struct InitTests {
-        @available(iOS 16.0, *)
         @Test("Can not be created from a non-promotable Take")
         func whitNonPromotableTake_fail() {
             // Arrange
@@ -22,7 +21,6 @@ struct VideoResumeTests {
             #expect(VideoResume(from: take) == nil)
         }
 
-        @available(iOS 16.0, *)
         @Test("Can be created from a promotable Take")
         func whitPromotableTake_Succed() throws {
             // Arrange
@@ -32,7 +30,6 @@ struct VideoResumeTests {
             #expect(VideoResume(from: take) != nil)
         }
 
-        @available(iOS 16.0, *)
         @Test("Has correct properties")
         func hasCorrectProperties() throws {
             // Arrange
@@ -47,7 +44,6 @@ struct VideoResumeTests {
             #expect(sut.promotedAt <= after)
         }
 
-        @available(iOS 16.0, *)
         @Test("Two video with sawe Take are equal")
         func withSameTakeId_areEqual() throws {
             // Arrange

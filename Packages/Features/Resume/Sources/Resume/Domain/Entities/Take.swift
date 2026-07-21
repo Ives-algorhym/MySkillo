@@ -12,7 +12,6 @@ import Foundation
 /// A `Take` moves through a lifecycle tracked by `TakeStatus`.
 /// Use `isAnalyzable` to check if it's eligible for AI analysis,
 /// and `isPromotable` to check if it can be added to the user's resume.
-@available(iOS 16.0, *)
 struct Take {
     /// Stable identifier for this take.
     let id: UUID
