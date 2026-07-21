@@ -8,12 +8,18 @@
 import Foundation
 @testable import Resume
 
+/// In-memory test double for `TakeRepository`.
 actor MockTakeRepository: TakeRepository {
+    /// Takes recorded by `save(_:)` calls, in order.
     private(set) var savedTakes: [Take] = []
+
+    /// IDs recorded by `delete(id:)` calls, in order.
     private(set) var deletedIds: [UUID] = []
+
+    /// The ID last passed to `setActiveVideoResume(_:)`.
     private(set) var activeVideoResumeId: UUID?
 
-    func save(_ take: Resume.Take) async throws {
+    func save(_ take: Take) async throws {
         savedTakes.append(take)
     }
 
@@ -25,7 +31,6 @@ actor MockTakeRepository: TakeRepository {
         guard let take = savedTakes.first(where: { $0.id == id }) else {
             throw TakeError.unknown
         }
-
         return take
     }
 
