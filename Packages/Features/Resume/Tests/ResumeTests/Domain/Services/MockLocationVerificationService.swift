@@ -10,11 +10,10 @@ import Testing
 
 /// In-memory test double for `LocationVerificationService`.
 actor MockLocationVerificationService: LocationVerificationService {
-
     /// The result returned by `verify(_:)`. Must be set before calling.
     var stubbedResult: VerifiedLocation?
 
-    func verify(_ input: String) async throws -> VerifiedLocation {
+    func verify(_: String) async throws -> VerifiedLocation {
         try #require(stubbedResult)
     }
 }
