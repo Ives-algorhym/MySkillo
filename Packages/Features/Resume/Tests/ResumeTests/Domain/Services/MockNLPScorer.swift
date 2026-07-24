@@ -13,7 +13,7 @@ final class MockNLPScorer: NLPScorer {
     /// The result returned by `score(_:)`. Must be set before calling.
     var stubbedResult: DimensionScore?
 
-    func score(_ transcript: TranscriptAnalysis) throws -> DimensionScore {
+    func score(_: TranscriptAnalysis) throws -> DimensionScore {
         try #require(stubbedResult)
     }
 }

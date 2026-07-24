@@ -1,5 +1,5 @@
 //
-//  TranscriptAnalysisTests.swift
+//  TranscriptAnalisysTests.swift
 //  Resume
 //
 //  Created by Ives Murillo on 7/21/26.

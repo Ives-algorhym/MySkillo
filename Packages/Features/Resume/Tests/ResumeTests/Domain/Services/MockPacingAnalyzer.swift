@@ -13,7 +13,7 @@ final class MockPacingAnalyzer: PacingAnalyzer {
     /// The result returned by `analyze(_:)`. Must be set before calling.
     var stubbedResult: DimensionScore?
 
-    func analyze(_ transcript: TranscriptAnalysis) throws -> DimensionScore {
+    func analyze(_: TranscriptAnalysis) throws -> DimensionScore {
         try #require(stubbedResult)
     }
 }

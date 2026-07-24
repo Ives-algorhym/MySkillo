@@ -16,7 +16,7 @@ actor MockTakeTranscriber: TakeTranscriber {
     /// The result returned by `transcribe(_:)`. Must be set before calling.
     var stubbedResult: TranscriptAnalysis?
 
-    func transcribe(_ take: Take) async throws -> TranscriptAnalysis {
+    func transcribe(_: Take) async throws -> TranscriptAnalysis {
         transcribeCallCount += 1
         return try #require(stubbedResult)
     }

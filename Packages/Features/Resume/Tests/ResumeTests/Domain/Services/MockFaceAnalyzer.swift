@@ -16,7 +16,7 @@ actor MockFaceAnalyzer: FaceAnalyzer {
     /// The result returned by `analyze(_:)`. Must be set before calling.
     var stubbedResult: FaceAnalysis?
 
-    func analyze(_ take: Take) async throws -> FaceAnalysis {
+    func analyze(_: Take) async throws -> FaceAnalysis {
         analyzedCallCount += 1
         return try #require(stubbedResult)
     }
