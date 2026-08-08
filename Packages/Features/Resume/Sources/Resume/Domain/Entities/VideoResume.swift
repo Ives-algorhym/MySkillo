@@ -7,7 +7,6 @@
 
 import Foundation
 
-@available(iOS 16.0, *)
 struct VideoResume: Equatable {
     let takeId: UUID
     let promotedAt: Date
